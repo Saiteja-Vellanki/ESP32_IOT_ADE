@@ -1,0 +1,25 @@
+idf_component_register(
+    SRCS
+        "main.c"
+        "uart_parser.c"
+        "web_server.c"
+        "relay_logic.c"
+        "status_led.c"
+        "remote_server.c"
+        "bt_commission.c"
+    INCLUDE_DIRS
+        "."
+    EMBED_FILES
+        "index.html"
+    REQUIRES
+        nvs_flash
+        esp_wifi
+        esp_event
+        esp_netif
+        esp_http_client
+        esp_http_server
+        bt
+        json
+        driver
+        esp_timer
+)
