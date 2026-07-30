@@ -6,11 +6,14 @@ idf_component_register(
         "relay_logic.c"
         "status_led.c"
         "remote_server.c"
-        "bt_commission.c"
+        "wifi_ap_provision.c"
+        "factory_reset.c"
+         "ntp_time.c"
     INCLUDE_DIRS
         "."
     EMBED_FILES
         "index.html"
+        "logo.png"
     REQUIRES
         nvs_flash
         esp_wifi
@@ -18,7 +21,8 @@ idf_component_register(
         esp_netif
         esp_http_client
         esp_http_server
-        bt
+        esp-tls
+        mbedtls
         json
         driver
         esp_timer

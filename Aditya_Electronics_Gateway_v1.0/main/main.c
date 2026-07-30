@@ -14,16 +14,20 @@
 #include "relay_logic.h"
 #include "status_led.h"
 #include "remote_server.h"
-#include "bt_commission.h"
+#include "wifi_ap_provision.h"
+#include "factory_reset.h"
 
 #include "nvs_flash.h"
+#include "nvs.h"
 #include "esp_netif.h"
 #include "esp_event.h"
 #include "esp_wifi.h"
+#include "esp_system.h"
 #include "esp_log.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "freertos/event_groups.h"
+#include "ntp_time.h"
 #include <string.h>
 #include <stdlib.h>
 
@@ -82,8 +86,33 @@ static void wifi_event_handler(void *arg, esp_event_base_t base,
 
         /* Signal startup failure if still in initial connect phase */
         if (!(xEventGroupGetBits(s_wifi_eg) & WIFI_CONNECTED_BIT)) {
-            if (s_retry_count >= WIFI_MAX_RETRY)
+            if (s_retry_count >= WIFI_MAX_RETRY) {
                 xEventGroupSetBits(s_wifi_eg, WIFI_FAIL_BIT);
+
+#if WIFI_PROVISION_MODE == 1
+                /* Never connected even once since boot, after
+                 * WIFI_MAX_RETRY attempts - almost certainly wrong
+                 * saved credentials (bad password, SSID changed,
+                 * etc), not a transient outage. This only fires
+                 * before the first successful connect (guarded by
+                 * the WIFI_CONNECTED_BIT check above, which is never
+                 * cleared once set), so a later real outage after
+                 * having connected before will NOT wipe good
+                 * credentials - only reconnect forever as before. */
+                ESP_LOGE(TAG, "Failed to connect after %d attempts - "
+                              "erasing saved credentials and restarting "
+                              "into the AP portal", s_retry_count);
+                nvs_handle_t h;
+                if (nvs_open(WIFI_NVS_NAMESPACE, NVS_READWRITE, &h) == ESP_OK) {
+                    nvs_erase_key(h, WIFI_NVS_KEY_SSID);
+                    nvs_erase_key(h, WIFI_NVS_KEY_PASS);
+                    nvs_commit(h);
+                    nvs_close(h);
+                }
+                vTaskDelay(pdMS_TO_TICKS(300));
+                esp_restart();
+#endif
+            }
         }
 
         /* Spawn reconnect task with current backoff delay */
@@ -105,6 +134,7 @@ static void wifi_event_handler(void *arg, esp_event_base_t base,
 
         ip_event_got_ip_t *ev = (ip_event_got_ip_t *)data;
         ESP_LOGI(TAG, "Connected! IP: " IPSTR, IP2STR(&ev->ip_info.ip));
+        ntp_init();
 
         /* Reset retry state */
         s_retry_count    = 0;
@@ -127,7 +157,7 @@ static void wifi_event_handler(void *arg, esp_event_base_t base,
                      IP2STR(&ev->ip_info.ip));
 #else
             remote_server_start();
-            ESP_LOGI(TAG, "Remote: %s%s", REMOTE_HOST, REMOTE_BASE);
+            ESP_LOGI(TAG, "Remote (HTTPS): %s%s", REMOTE_HOST, REMOTE_BASE);
 #endif
         }
     }
@@ -140,8 +170,20 @@ static void wifi_init(void)
 {
     s_wifi_eg = xEventGroupCreate();
 
-    ESP_ERROR_CHECK(esp_netif_init());
-    ESP_ERROR_CHECK(esp_event_loop_create_default());
+    /* esp_netif_init() and esp_event_loop_create_default() may
+     * already have been called by wifi_ap_provision_run() if AP
+     * portal provisioning ran first — guard against re-init crash
+     * (ESP_ERR_INVALID_STATE) exactly like wifi_ap_provision.c does. */
+    esp_err_t netif_err = esp_netif_init();
+    if (netif_err != ESP_OK && netif_err != ESP_ERR_INVALID_STATE) {
+        ESP_ERROR_CHECK(netif_err);
+    }
+
+    esp_err_t evloop_err = esp_event_loop_create_default();
+    if (evloop_err != ESP_OK && evloop_err != ESP_ERR_INVALID_STATE) {
+        ESP_ERROR_CHECK(evloop_err);
+    }
+
     esp_netif_create_default_wifi_sta();
 
     wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
@@ -162,6 +204,14 @@ static void wifi_init(void)
     ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, &wc));
     ESP_ERROR_CHECK(esp_wifi_start());
 
+    /* Reduce max TX power — lowers peak current draw during the
+     * connection handshake, which is when brownout resets are
+     * most likely on boards with marginal power supply/decoupling.
+     * 8.5dBm is still plenty for typical indoor range; raise this
+     * back toward 20 (max) once hardware power supply is fixed
+     * (proper capacitor + adequate power source) if range suffers. */
+    esp_wifi_set_max_tx_power(34);   /* ~8.5dBm, in 0.25dBm units */
+
     /* Wait up to 30s for first connect — app continues either way */
     xEventGroupWaitBits(s_wifi_eg,
                         WIFI_CONNECTED_BIT | WIFI_FAIL_BIT,
@@ -174,17 +224,27 @@ static void wifi_init(void)
  * ───────────────────────────────────────────────────────────── */
 void app_main(void)
 {
-    ESP_LOGI(TAG, "=== Aditya Electronics Gateway v1.0 ===");
-    ESP_LOGI(TAG, "WiFi: %s | Server: %s",
-             BT_COMMISSIONING ? "BT-commission" : "hardcoded",
-             LOCAL_WEB_SERVER  ? "local"          : "remote");
+    ESP_LOGI(TAG, "=== Aditya Electronics Gateway ===");
+    ESP_LOGI(TAG, "Firmware version: %s", CONFIG_FW_VERSION);
+#if WIFI_PROVISION_MODE == 1
+    ESP_LOGI(TAG, "WiFi: AP-portal | Server: %s",
+             LOCAL_WEB_SERVER ? "local" : "remote");
+#else
+    ESP_LOGI(TAG, "WiFi: hardcoded | Server: %s",
+             LOCAL_WEB_SERVER ? "local" : "remote");
+#endif
 
     /* NVS */
     esp_err_t ret = nvs_flash_init();
+    ESP_LOGI(TAG, "nvs_flash_init() returned: %s", esp_err_to_name(ret));
     if (ret == ESP_ERR_NVS_NO_FREE_PAGES ||
         ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
+        ESP_LOGW(TAG, "NVS partition needs erase (%s) — WIPING ALL SAVED "
+                      "DATA including WiFi credentials!", esp_err_to_name(ret));
         ESP_ERROR_CHECK(nvs_flash_erase());
         ret = nvs_flash_init();
+        ESP_LOGI(TAG, "nvs_flash_init() after erase returned: %s",
+                 esp_err_to_name(ret));
     }
     ESP_ERROR_CHECK(ret);
 
@@ -193,26 +253,54 @@ void app_main(void)
     relay_logic_init();
     status_led_init();
     buzzer_init();
+    factory_reset_init();   /* watches the hold-button regardless of WiFi state */
 
     /* LED fast blink while connecting */
     status_led_set_mode(LED_MODE_SEARCHING);
     buzzer_set_no_signal(true);
 
-    /* WiFi credentials */
-#if BT_COMMISSIONING && defined(CONFIG_BT_ENABLED)
-    if (!bt_commission_load_nvs(s_ssid, s_pass, sizeof(s_ssid))) {
-        ESP_LOGI(TAG, "No NVS creds — starting BT (%s)", BT_DEVICE_NAME);
-        bool got = bt_commission_run(s_ssid, s_pass, sizeof(s_ssid));
+    /* ── WiFi credentials — 2-way provisioning mode ────────────
+     * Both modes check NVS first — if credentials were already
+     * saved by a previous AP-portal run, they're reused directly
+     * without re-provisioning.    */
+#if WIFI_PROVISION_MODE == 1
+    /* ── Step 1: mandatory IP configuration (first setup / after
+     * factory reset only - no-op + returns immediately once an IP
+     * is already saved). Reboots on its own if it actually runs. */
+    wifi_ap_ip_config_run();
+
+    /* ── Step 2: WiFi AP portal (recommended, most reliable) ── */
+    if (!wifi_provision_load_nvs(s_ssid, s_pass, sizeof(s_ssid))) {
+        char ap_ip[16];
+        wifi_provision_get_ap_ip(ap_ip, sizeof(ap_ip));
+        ESP_LOGI(TAG, "No NVS creds — starting AP portal (%s)", WIFI_AP_SSID);
+        ESP_LOGI(TAG, "Connect to WiFi \"%s\" then open http://%s/",
+                 WIFI_AP_SSID, ap_ip);
+        bool got = wifi_ap_provision_run(s_ssid, s_pass, sizeof(s_ssid));
+        wifi_ap_provision_stop();
+
+        /* Settle delay — the AP→STA radio transition draws a real
+         * current spike (deinit AP, reinit STA, associate, DHCP).
+         * On boards with marginal power supply/decoupling, this
+         * spike alone can brown out the chip (confirmed via
+         * rst:0x1 POWERON_RESET immediately after credential
+         * submission). This delay lets supply rails/capacitors
+         * settle before the next radio-heavy operation begins.
+         * Root cause is the power supply, not this delay — but it
+         * meaningfully reduces the chance of the reset in practice.*/
+        vTaskDelay(pdMS_TO_TICKS(500));
+
         if (!got) {
-            ESP_LOGW(TAG, "BT timeout — using hardcoded");
+            ESP_LOGW(TAG, "AP portal timeout — using hardcoded");
             strncpy(s_ssid, WIFI_SSID,    sizeof(s_ssid) - 1);
             strncpy(s_pass, WIFI_PASSWORD, sizeof(s_pass) - 1);
         }
     } else {
         ESP_LOGI(TAG, "NVS creds: %s", s_ssid);
     }
-    bt_commission_stop();
+
 #else
+    /* ── Mode 0: hardcoded ────────────────────────────────────── */
     strncpy(s_ssid, WIFI_SSID,    sizeof(s_ssid) - 1);
     strncpy(s_pass, WIFI_PASSWORD, sizeof(s_pass) - 1);
     ESP_LOGI(TAG, "Hardcoded SSID: %s", s_ssid);
@@ -221,15 +309,42 @@ void app_main(void)
     /* WiFi init + first connect */
     wifi_init();
 
-    /* Heartbeat loop */
+    /* Heartbeat loop — organized multi-line status summary, everything
+     * in one place every 10s so the console log is easy to scan
+     * instead of hunting through scattered lines from other modules. */
     while (1) {
         vTaskDelay(pdMS_TO_TICKS(10000));
         EventBits_t bits = xEventGroupGetBits(s_wifi_eg);
-        ESP_LOGI(TAG, "WiFi:%s pkts=%lu uart:%s relays=0x%X retry#%d",
-                 (bits & WIFI_CONNECTED_BIT) ? "UP" : "DOWN",
-                 (unsigned long)uart_parser_packet_count(),
+
+        /* Build the active-switches list, same decoding style as
+         * uart_parser.c's own switch-packet log. */
+        char active_sw[160];
+        int  pos = 0;
+        bool any_sw = false;
+        for (uint8_t i = 0; i < GPIO_COUNT; i++) {
+            if (uart_parser_get_gpio(i)) {
+                pos += snprintf(active_sw + pos, sizeof(active_sw) - (size_t)pos,
+                                "%sSW%02u", any_sw ? " " : "", (unsigned)(i + 1));
+                any_sw = true;
+            }
+        }
+        if (!any_sw) snprintf(active_sw, sizeof(active_sw), "none");
+
+        ESP_LOGI(TAG, "================ STATUS SUMMARY ================");
+        ESP_LOGI(TAG, "WiFi     : %s | retry#%d",
+                 (bits & WIFI_CONNECTED_BIT) ? "UP" : "DOWN", s_retry_count);
+        ESP_LOGI(TAG, "NUC UART : %s | pkts=%lu",
                  uart_parser_is_online() ? "OK" : "LOST",
-                 relay_logic_get_mask(),
-                 s_retry_count);
+                 (unsigned long)uart_parser_packet_count());
+        ESP_LOGI(TAG, "Battery  : %umV (%u%%) | Power: %s | Low-batt: %s",
+                 uart_parser_get_bat_mv(), uart_parser_get_bat_pct(),
+                 uart_parser_is_power_fail() ? "FAIL" : "OK",
+                 uart_parser_is_low_battery() ? "YES" : "no");
+        ESP_LOGI(TAG, "Relays   : R1=%d R2=%d R3=%d R4=%d",
+                 relay_logic_get_state(1), relay_logic_get_state(2),
+                 relay_logic_get_state(3), relay_logic_get_state(4));
+        ESP_LOGI(TAG, "Lock     : %s", remote_server_is_locked() ? "LOCKED" : "unlocked");
+        ESP_LOGI(TAG, "Switches : %s", active_sw);
+        ESP_LOGI(TAG, "==================================================");
     }
 }

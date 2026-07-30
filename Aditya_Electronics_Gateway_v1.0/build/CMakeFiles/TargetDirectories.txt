@@ -453,7 +453,6 @@ C:/Espressif/frameworks/esp-idf-v5.5.2/examples/Aditya_Electronics_Gateway_v1.0/
 C:/Espressif/frameworks/esp-idf-v5.5.2/examples/Aditya_Electronics_Gateway_v1.0/build/esp-idf/esp_gdbstub/CMakeFiles/install.dir
 C:/Espressif/frameworks/esp-idf-v5.5.2/examples/Aditya_Electronics_Gateway_v1.0/build/esp-idf/esp_gdbstub/CMakeFiles/install/local.dir
 C:/Espressif/frameworks/esp-idf-v5.5.2/examples/Aditya_Electronics_Gateway_v1.0/build/esp-idf/esp_gdbstub/CMakeFiles/install/strip.dir
-C:/Espressif/frameworks/esp-idf-v5.5.2/examples/Aditya_Electronics_Gateway_v1.0/build/esp-idf/bt/CMakeFiles/__idf_bt.dir
 C:/Espressif/frameworks/esp-idf-v5.5.2/examples/Aditya_Electronics_Gateway_v1.0/build/esp-idf/bt/CMakeFiles/edit_cache.dir
 C:/Espressif/frameworks/esp-idf-v5.5.2/examples/Aditya_Electronics_Gateway_v1.0/build/esp-idf/bt/CMakeFiles/rebuild_cache.dir
 C:/Espressif/frameworks/esp-idf-v5.5.2/examples/Aditya_Electronics_Gateway_v1.0/build/esp-idf/bt/CMakeFiles/list_install_components.dir

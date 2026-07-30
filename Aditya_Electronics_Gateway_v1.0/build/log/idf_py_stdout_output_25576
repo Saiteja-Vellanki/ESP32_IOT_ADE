@@ -1,0 +1,573 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5.2\tools/idf_monitor.py -p com7 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 C:\Espressif\frameworks\esp-idf-v5.5.2\examples\Aditya_Electronics_Gateway_v1.0\build\Aditya_Electronics_Gateway.elf C:\Espressif\frameworks\esp-idf-v5.5.2\examples\Aditya_Electronics_Gateway_v1.0\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.5.2\tools\idf.py' '-p' 'com7'
+
+clk_drv:0x0 Label            Usage          Type ST Offset   Length
+[0;32mI (55) boot:  0 nvs     �ets Jun  8 2016 00:22:57[0m
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6384
+load:0x40078000,len:15916
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v5.5.2 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Jul 30 2026 18:32:57[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (28) boot: chip revision: v1.0[0m
+[0;32mI (31) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (38) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (55) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (68) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (75) boot: End of partition table[0m
+[0;32mI (78) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=41460h (267360) map[0m
+[0;32mI (177) esp_image: segment 1: paddr=00051488 vaddr=3ffb0000 size=03fa4h ( 16292) load[0m
+[0;32mI (183) esp_image: segment 2: paddr=00055434 vaddr=40080000 size=0abe4h ( 44004) load[0m
+[0;32mI (201) esp_image: segment 3: paddr=00060020 vaddr=400d0020 size=aedf4h (716276) map[0m
+[0;32mI (445) esp_image: segment 4: paddr=0010ee1c vaddr=4008abe4 size=0e490h ( 58512) load[0m
+[0;32mI (469) esp_image: segment 5: paddr=0011d2b4 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (481) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (481) boot: Disabling RNG early entropy source...[0m
+[0;32mI (492) cpu_start: Multicore app[0m
+[0;32mI (500) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (500) cpu_start: Pro cpu start user code[0m
+[0;32mI (500) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (502) app_init: Application information:[0m
+[0;32mI (506) app_init: Project name:     Aditya_Electronics_Gateway[0m
+[0;32mI (511) app_init: App version:      v5.5.2[0m
+[0;32mI (515) app_init: Compile time:     Jul 30 2026 18:32:16[0m
+[0;32mI (520) app_init: ELF file SHA256:  51829bd63...[0m
+[0;32mI (525) app_init: ESP-IDF:          v5.5.2[0m
+[0;32mI (528) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (532) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (536) efuse_init: Chip rev:         v1.0[0m
+[0;32mI (540) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (546) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (551) heap_init: At 3FFB8A90 len 00027570 (157 KiB): DRAM[0m
+[0;32mI (557) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (562) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (568) heap_init: At 40099074 len 00006F8C (27 KiB): IRAM[0m
+[0;32mI (574) spi_flash: detected chip: generic[0m
+[0;32mI (577) spi_flash: flash io: dio[0m
+[0;32mI (581) main_task: Started on CPU0[0m
+[0;32mI (584) main_task: Calling app_main()[0m
+[0;32mI (586) main: === Aditya Electronics Gateway ===[0m
+[0;32mI (590) main: Firmware version: 2.0-Beta[0m
+[0;32mI (594) main: WiFi: AP-portal | Server: remote[0m
+[0;32mI (631) main: nvs_flash_init() returned: ESP_OK[0m
+[0;32mI (633) uart: UART2 RX=GPIO16 TX=GPIO17 115200baud[0m
+[0;32mI (634) relay: Relay state tracker init (no local GPIO - NUC owns the physical relays, driven via UART)[0m
+[0;32mI (639) led: LED GPIO2[0m
+[0;32mI (641) led: Buzzer GPIO4[0m
+[0;32mI (643) factory_reset: Factory reset: hold GPIO0 for 15s to erase WiFi credentials and reset portal IP to 192.168.4.1[0m
+[0;32mI (653) factory_reset: WiFi-only reset: hold GPIO25 for 7s to erase WiFi credentials only (setup-page IP stays as configured)[0m
+[0;32mI (666) wifi_ap: NVS loaded SSID=Saiteja[0m
+[0;32mI (668) main: NVS creds: Saiteja[0m
+[0;32mI (675) wifi:wifi driver task: 3ffc5f9c, prio:23, stack:6656, core=0[0m
+[0;32mI (695) wifi:wifi firmware version: ee91c8c[0m
+[0;32mI (696) wifi:wifi certification version: v7.0[0m
+[0;32mI (696) wifi:config NVS flash: enabled[0m
+[0;32mI (696) wifi:config nano formatting: disabled[0m
+[0;32mI (697) uart: ← NUC: switch pkt B0=0x00 B1=0x00 B2=0x00 B3=0x00 (changed) | active: none | PF=0 LB=0[0m
+[0;32mI (701) wifi:I (709) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+Init data frame dynamic rx buffer num: 8
+[0;32mI (721) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (725) wifi:Init management short buffer num: 32[0m
+[0;32mI (729) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (733) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (737) wifi:Init static rx buffer num: 4[0m
+[0;32mI (741) wifi:Init dynamic rx buffer num: 8[0m
+[0;32mI (746) wifi_init: rx ba win: 6[0m
+[0;32mI (747) wifi_init: accept mbox: 6[0m
+[0;32mI (751) wifi_init: tcpip mbox: 32[0m
+[0;32mI (754) wifi_init: udp mbox: 6[0m
+[0;32mI (756) wifi_init: tcp mbox: 6[0m
+[0;32mI (759) wifi_init: tcp tx win: 5760[0m
+[0;32mI (762) wifi_init: tcp rx win: 5760[0m
+[0;32mI (766) wifi_init: tcp mss: 1440[0m
+[0;32mI (768) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (772) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (778) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (858) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (933) wifi:mode : sta (ec:62:60:9c:d7:08)[0m
+[0;32mI (934) wifi:enable tsf[0m
+[0;32mI (940) main: Connecting to Saiteja...[0m
+[0;32mI (1021) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1022) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1028) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1035) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1090) wifi:connected with Saiteja, aid = 1, channel 1, BW20, bssid = 82:ca:e7:a4:6b:e7[0m
+[0;32mI (1091) wifi:security: WPA2-PSK, phy: bgn, rssi: -59[0m
+[0;32mI (1096) wifi:pm start, type: 1[0m
+
+[0;32mI (1096) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1116) wifi:<ba-add>idx:0 (ifx:0, 82:ca:e7:a4:6b:e7), tid:0, ssn:0, winSize:64[0m
+[0;32mI (1120) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (1121) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (1196) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (1696) uart: ← NUC: VOLT pkt BAT=4252mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (2129) esp_netif_handlers: sta ip: 192.168.29.146, mask: 255.255.255.0, gw: 192.168.29.1[0m
+[0;32mI (2130) main: Connected! IP: 192.168.29.146[0m
+[0;32mI (2131) NTP: Initializing SNTP[0m
+[0;32mI (2196) uart: ← NUC: VOLT pkt BAT=4252mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;33mW (2641) led: Buzzer: 5 beeps — no signal[0m
+[0;32mI (2696) uart: ← NUC: switch pkt B0=0x00 B1=0x00 B2=0x00 B3=0x00 | active: none | PF=0 LB=0[0m
+[0;32mI (2697) uart: ← NUC: VOLT pkt BAT=4252mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (3195) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (3695) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (4194) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (4694) uart: ← NUC: switch pkt B0=0x00 B1=0x00 B2=0x00 B3=0x00 | active: none | PF=0 LB=0[0m
+[0;32mI (4695) uart: ← NUC: VOLT pkt BAT=4252mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (5135) NTP: NTP synchronized[0m
+[0;32mI (5136) main: Remote (HTTPS): www.adityaelectronicsolutions.com/iot-pump/res-pump[0m
+[0;32mI (5136) remote: DeviceID (MAC): EC62609CD708  server: https://www.adityaelectronicsolutions.com/iot-pump/res-pump[0m
+[0;32mI (5194) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (5344) remote: REGISTER status=1[0m
+[0;32mI (5693) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (5738) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (6193) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (6693) uart: ← NUC: switch pkt B0=0x00 B1=0x00 B2=0x00 B3=0x00 | active: none | PF=0 LB=0[0m
+[0;32mI (6694) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (7192) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (7692) uart: ← NUC: VOLT pkt BAT=4252mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (7994) remote: REGISTER: OK[0m
+[0;32mI (7995) remote: Registered OK[0m
+[0;32mI (8191) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (8638) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (8691) uart: ← NUC: switch pkt B0=0x00 B1=0x00 B2=0x00 B3=0x00 | active: none | PF=0 LB=0[0m
+[0;32mI (8693) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (9191) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (9430) remote: update_soft_reset_status: OK (SF=1)[0m
+[0;32mI (9690) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (9756) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (10190) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;33mW (10657) remote: Using 'Muccess' typo fallback - server should rename this field to 'success'[0m
+[0;32mI (10689) uart: ← NUC: switch pkt B0=0x00 B1=0x00 B2=0x00 B3=0x00 | active: none | PF=0 LB=0[0m
+[0;32mI (10690) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (10974) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (11189) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (11689) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (12188) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (12208) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (12688) uart: ← NUC: switch pkt B0=0x00 B1=0x00 B2=0x00 B3=0x00 | active: none | PF=0 LB=0[0m
+[0;32mI (12689) uart: ← NUC: VOLT pkt BAT=4252mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (13118) remote: Server: RL1 ON[0m
+[0;32mI (13119) relay: RL1 tracked → ON (NUC drives the real relay)[0m
+[0;32mI (13119) uart: → NUC: relay cmd RL1[0m
+[0;32mI (13187) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (13687) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (14187) uart: ← NUC: VOLT pkt BAT=4252mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (14619) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (14686) uart: ← NUC: switch pkt B0=0x00 B1=0x00 B2=0x00 B3=0x00 | active: none | PF=0 LB=0[0m
+[0;32mI (14687) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (15136) main: ================ STATUS SUMMARY ================[0m
+[0;32mI (15136) main: WiFi     : UP | retry#0[0m
+[0;32mI (15137) main: NUC UART : OK | pkts=145[0m
+[0;32mI (15138) main: Battery  : 4256mV (100%) | Power: OK | Low-batt: no[0m
+[0;32mI (15144) main: Relays   : R1=1 R2=0 R3=0 R4=0[0m
+[0;32mI (15148) main: Lock     : unlocked[0m
+[0;32mI (15152) main: Switches : none[0m
+[0;32mI (15154) main: ==================================================[0m
+[0;32mI (15186) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (15573) remote: Server: RL2 ON[0m
+[0;32mI (15573) uart: → NUC: relay cmd RL2[0m
+[0;32mI (15686) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (15909) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (16119) relay: RL1 tracked → OFF (NUC drives the real relay)[0m
+[0;32mI (16120) relay: RL2 tracked → ON (NUC drives the real relay)[0m
+[0;32mI (16185) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (16685) uart: ← NUC: switch pkt B0=0x00 B1=0x00 B2=0x00 B3=0x00 | active: none | PF=0 LB=0[0m
+[0;32mI (16686) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (16706) remote: Server: RL3 ON[0m
+[0;32mI (16707) relay: RL3 tracked → ON (NUC drives the real relay)[0m
+[0;32mI (16707) uart: → NUC: relay cmd RL3[0m
+[0;32mI (17054) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (17184) uart: ← NUC: VOLT pkt BAT=4252mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (17684) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (17928) remote: Server: RL4 ON[0m
+[0;32mI (17929) uart: → NUC: relay cmd RL4[0m
+[0;32mI (18183) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (18245) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (18683) uart: ← NUC: switch pkt B0=0x00 B1=0x00 B2=0x00 B3=0x00 | active: none | PF=0 LB=0[0m
+[0;32mI (18684) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (18956) remote: read_relay_status raw: R1=1 R2=1 R3=1 R4=1[0m
+[0;32mI (19183) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (19473) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (19682) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (19707) relay: RL4 tracked → ON (NUC drives the real relay)[0m
+[0;32mI (20182) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (20681) uart: ← NUC: switch pkt B0=0x00 B1=0x00 B2=0x00 B3=0x00 | active: none | PF=0 LB=0[0m
+[0;32mI (20683) uart: ← NUC: VOLT pkt BAT=4252mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (20707) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (21181) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;33mW (21409) remote: Using 'Muccess' typo fallback - server should rename this field to 'success'[0m
+[0;32mI (21410) remote: LED update (3/25 slots): OK[0m
+[0;32mI (21681) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (21727) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (22180) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (22680) uart: ← NUC: switch pkt B0=0x00 B1=0x00 B2=0x00 B3=0x00 | active: none | PF=0 LB=0[0m
+[0;32mI (22681) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (22707) relay: RL4 tracked → OFF (NUC drives the real relay)[0m
+[0;32mI (22707) relay: RL4 tracked → ON (NUC drives the real relay)[0m
+[0;32mI (22959) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (23179) uart: ← NUC: VOLT pkt BAT=4252mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (23679) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (23870) remote: Server: RL1 ON[0m
+[0;32mI (23870) uart: → NUC: relay cmd RL1[0m
+[0;32mI (24179) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (24188) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (24678) uart: ← NUC: switch pkt B0=0x00 B1=0x00 B2=0x00 B3=0x00 | active: none | PF=0 LB=0[0m
+[0;32mI (24679) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (25098) remote: read_relay_status raw: R1=1 R2=1 R3=1 R4=1[0m
+[0;32mI (25160) main: ================ STATUS SUMMARY ================[0m
+[0;32mI (25160) main: WiFi     : UP | retry#0[0m
+[0;32mI (25161) main: NUC UART : OK | pkts=245[0m
+[0;32mI (25162) main: Battery  : 4256mV (100%) | Power: OK | Low-batt: no[0m
+[0;32mI (25169) main: Relays   : R1=0 R2=1 R3=1 R4=1[0m
+[0;32mI (25177) main: Lock     : unlocked[0m
+[0;32mI (25178) main: Switches : none[0m
+[0;32mI (25178) main: ==================================================[0m
+[0;32mI (25178) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (25416) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (25677) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (25707) relay: RL4 tracked → OFF (NUC drives the real relay)[0m
+[0;32mI (25707) relay: RL1 tracked → ON (NUC drives the real relay)[0m
+[0;32mI (26177) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (26429) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (26677) uart: ← NUC: switch pkt B0=0x00 B1=0x00 B2=0x00 B3=0x00 | active: none | PF=0 LB=0[0m
+[0;32mI (26679) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (26759) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (27176) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (27663) remote: Server LED status (read back): L1=0 L2=0 L3=0 L4=0 L5=0 L6=0 L7=0 L8=0 L9=0 L10=0 L11=0 L12=0 L13=0 L14=0 L15=0 L16=0 L17=0 L18=0 L19=0 L20=0 L21=0 L22=0 L23=0 L24=0 L25=0 [0m
+[0;32mI (27676) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (28008) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (28176) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (28675) uart: ← NUC: switch pkt B0=0x00 B1=0x00 B2=0x00 B3=0x00 | active: none | PF=0 LB=0[0m
+[0;32mI (28676) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (28708) relay: RL1 tracked → OFF (NUC drives the real relay)[0m
+[0;32mI (28886) remote: read_input_status raw: R1=1 R2=1 R3=1 R4=1 Lock=0 SoftReset=1[0m
+[0;32mI (29175) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (29214) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (29675) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (30029) remote: power details update: OK (pwr_status=1 batt_volt=4.26 batt_status=1)[0m
+[0;32mI (30174) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (30345) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (30674) uart: ← NUC: switch pkt B0=0x00 B1=0x00 B2=0x00 B3=0x00 | active: none | PF=0 LB=0[0m
+[0;32mI (30675) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (31137) remote: read_soft_reset_status poll OK (SoftResetStatus=1)[0m
+[0;33mW (31138) remote: Soft reset requested by server - waiting 5s before acknowledging (SOFT_RESET_PRE_ACK_DELAY_MS)...[0m
+[0;32mI (31173) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (31673) uart: ← NUC: VOLT pkt BAT=4252mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (32173) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (32672) uart: ← NUC: switch pkt B0=0x00 B1=0x00 B2=0x00 B3=0x00 | active: none | PF=0 LB=0[0m
+[0;32mI (32673) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (33172) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (33671) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (34171) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (34671) uart: ← NUC: switch pkt B0=0x00 B1=0x00 B2=0x00 B3=0x00 | active: none | PF=0 LB=0[0m
+[0;32mI (34672) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (35170) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (35184) main: ================ STATUS SUMMARY ================[0m
+[0;32mI (35184) main: WiFi     : UP | retry#0[0m
+[0;32mI (35185) main: NUC UART : OK | pkts=346[0m
+[0;32mI (35186) main: Battery  : 4256mV (100%) | Power: OK | Low-batt: no[0m
+[0;32mI (35192) main: Relays   : R1=0 R2=1 R3=1 R4=0[0m
+[0;32mI (35196) main: Lock     : unlocked[0m
+[0;32mI (35200) main: Switches : none[0m
+[0;32mI (35202) main: ==================================================[0m
+[0;32mI (35670) uart: ← NUC: VOLT pkt BAT=4252mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (36170) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (36458) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (36669) uart: ← NUC: switch pkt B0=0x00 B1=0x00 B2=0x00 B3=0x00 | active: none | PF=0 LB=0[0m
+[0;32mI (36670) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (37169) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (37406) remote: update_soft_reset_status: OK (SF=0)[0m
+[0;33mW (37407) remote: Acknowledged - resetting NUC first, then ESP32...[0m
+[0;33mW (37407) uart: → NUC: RESET (server-requested soft reset - NUC resets first)[0m
+[0;32mI (37669) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (38168) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (38614) wifi:state: run -> init (0x0)[0m
+[0;32mI (38618) wifi:pm stop, total sleep time: 28554097 us / 37522261 us[0m
+
+[0;32mI (38619) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (38619) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (38628) main: Disconnected (reason=8) retry #1 in 2000ms[0m
+[0;33mW (38630) main: Reconnecting in 2000ms...[0m
+[0;32mI (38658) wifi:flush txq[0m
+[0;32mI (38658) wifi:stop sw txq[0m
+[0;32mI (38658) wifi:lmac stop hw txq[0m
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6384
+load:0x40078000,len:15916
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v5.5.2 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Jul 30 2026 18:32:57[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v1.0[0m
+[0;32mI (31) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (75) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=41460h (267360) map[0m
+[0;32mI (177) esp_image: segment 1: paddr=00051488 vaddr=3ffb0000 size=03fa4h ( 16292) load[0m
+[0;32mI (184) esp_image: segment 2: paddr=00055434 vaddr=40080000 size=0abe4h ( 44004) load[0m
+[0;32mI (201) esp_image: segment 3: paddr=00060020 vaddr=400d0020 size=aedf4h (716276) map[0m
+[0;32mI (446) esp_image: segment 4: paddr=0010ee1c vaddr=4008abe4 size=0e490h ( 58512) load[0m
+[0;32mI (469) esp_image: segment 5: paddr=0011d2b4 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (481) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (481) boot: Disabling RNG early entropy source...[0m
+[0;32mI (492) cpu_start: Multicore app[0m
+[0;32mI (500) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (500) cpu_start: Pro cpu start user code[0m
+[0;32mI (500) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (502) app_init: Application information:[0m
+[0;32mI (506) app_init: Project name:     Aditya_Electronics_Gateway[0m
+[0;32mI (512) app_init: App version:      v5.5.2[0m
+[0;32mI (515) app_init: Compile time:     Jul 30 2026 18:32:16[0m
+[0;32mI (521) app_init: ELF file SHA256:  51829bd63...[0m
+[0;32mI (525) app_init: ESP-IDF:          v5.5.2[0m
+[0;32mI (529) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (533) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (536) efuse_init: Chip rev:         v1.0[0m
+[0;32mI (541) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (547) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (552) heap_init: At 3FFB8A90 len 00027570 (157 KiB): DRAM[0m
+[0;32mI (557) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (562) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (568) heap_init: At 40099074 len 00006F8C (27 KiB): IRAM[0m
+[0;32mI (575) spi_flash: detected chip: generic[0m
+[0;32mI (577) spi_flash: flash io: dio[0m
+[0;32mI (581) main_task: Started on CPU0[0m
+[0;32mI (584) main_task: Calling app_main()[0m
+[0;32mI (586) main: === Aditya Electronics Gateway ===[0m
+[0;32mI (590) main: Firmware version: 2.0-Beta[0m
+[0;32mI (594) main: WiFi: AP-portal | Server: remote[0m
+[0;32mI (632) main: nvs_flash_init() returned: ESP_OK[0m
+[0;32mI (634) uart: UART2 RX=GPIO16 TX=GPIO17 115200baud[0m
+[0;32mI (634) relay: Relay state tracker init (no local GPIO - NUC owns the physical relays, driven via UART)[0m
+[0;32mI (640) led: LED GPIO2[0m
+[0;32mI (641) led: Buzzer GPIO4[0m
+[0;32mI (644) factory_reset: Factory reset: hold GPIO0 for 15s to erase WiFi credentials and reset portal IP to 192.168.4.1[0m
+[0;32mI (654) factory_reset: WiFi-only reset: hold GPIO25 for 7s to erase WiFi credentials only (setup-page IP stays as configured)[0m
+[0;32mI (667) wifi_ap: NVS loaded SSID=Saiteja[0m
+[0;32mI (668) main: NVS creds: Saiteja[0m
+[0;32mI (676) wifi:wifi driver task: 3ffc6020, prio:23, stack:6656, core=0[0m
+[0;32mI (696) wifi:wifi firmware version: ee91c8c[0m
+[0;32mI (696) wifi:wifi certification version: v7.0[0m
+[0;32mI (697) wifi:config NVS flash: enabled[0m
+[0;32mI (697) wifi:config nano formatting: disabled[0m
+[0;32mI (700) uart: ← NUC: switch pkt B0=0x00 B1=0x00 B2=0x00 B3=0x00 (changed) | active: none | PF=0 LB=0[0m
+[0;32mI (701) wifi:Init data frame dynamic rx buffer num: 8[0m
+[0;32mI (715) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (719) wifi:Init management short buffer num: 32[0m
+[0;32mI (723) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (727) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (731) wifi:Init static rx buffer num: 4[0m
+[0;32mI (735) wifi:Init dynamic rx buffer num: 8[0m
+[0;32mI (740) wifi_init: rx ba win: 6[0m
+[0;32mI (742) wifi_init: accept mbox: 6[0m
+[0;32mI (745) wifi_init: tcpip mbox: 32[0m
+[0;32mI (748) wifi_init: udp mbox: 6[0m
+[0;32mI (750) wifi_init: tcp mbox: 6[0m
+[0;32mI (753) wifi_init: tcp tx win: 5760[0m
+[0;32mI (756) wifi_init: tcp rx win: 5760[0m
+[0;32mI (760) wifi_init: tcp mss: 1440[0m
+[0;32mI (763) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (766) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (772) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (851) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (869) wifi:mode : sta (ec:62:60:9c:d7:08)[0m
+[0;32mI (869) wifi:enable tsf[0m
+[0;32mI (875) main: Connecting to Saiteja...[0m
+[0;32mI (960) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (962) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (968) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (975) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1001) uart: ← NUC: VOLT pkt BAT=4252mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (1115) wifi:connected with Saiteja, aid = 1, channel 1, BW20, bssid = 82:ca:e7:a4:6b:e7[0m
+[0;32mI (1116) wifi:security: WPA2-PSK, phy: bgn, rssi: -58[0m
+[0;32mI (1121) wifi:pm start, type: 1[0m
+
+[0;32mI (1122) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1139) wifi:<ba-add>idx:0 (ifx:0, 82:ca:e7:a4:6b:e7), tid:0, ssn:0, winSize:64[0m
+[0;32mI (1162) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (1163) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (1500) uart: ← NUC: VOLT pkt BAT=4252mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (2000) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (2148) esp_netif_handlers: sta ip: 192.168.29.146, mask: 255.255.255.0, gw: 192.168.29.1[0m
+[0;32mI (2149) main: Connected! IP: 192.168.29.146[0m
+[0;32mI (2150) NTP: Initializing SNTP[0m
+[0;32mI (2154) NTP: NTP synchronized[0m
+[0;32mI (2156) main: Remote (HTTPS): www.adityaelectronicsolutions.com/iot-pump/res-pump[0m
+[0;32mI (2156) remote: DeviceID (MAC): EC62609CD708  server: https://www.adityaelectronicsolutions.com/iot-pump/res-pump[0m
+[0;32mI (2373) remote: REGISTER status=1[0m
+[0;32mI (2501) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;33mW (2641) led: Buzzer: 5 beeps — no signal[0m
+[0;32mI (2699) uart: ← NUC: switch pkt B0=0x00 B1=0x00 B2=0x00 B3=0x00 | active: none | PF=0 LB=0[0m
+[0;32mI (2745) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (2999) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (3499) uart: ← NUC: VOLT pkt BAT=4252mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (3999) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (4498) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (4658) remote: REGISTER: OK[0m
+[0;32mI (4658) remote: Registered OK[0m
+[0;32mI (4697) uart: ← NUC: switch pkt B0=0x00 B1=0x00 B2=0x00 B3=0x00 | active: none | PF=0 LB=0[0m
+[0;32mI (4998) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (5095) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (5498) uart: ← NUC: VOLT pkt BAT=4248mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (5886) remote: update_soft_reset_status: OK (SF=1)[0m
+[0;32mI (5997) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (6210) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (6497) uart: ← NUC: VOLT pkt BAT=4252mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (6696) uart: ← NUC: switch pkt B0=0x00 B1=0x00 B2=0x00 B3=0x00 | active: none | PF=0 LB=0[0m
+[0;32mI (6996) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;33mW (7118) remote: Using 'Muccess' typo fallback - server should rename this field to 'success'[0m
+[0;32mI (7454) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (7496) uart: ← NUC: VOLT pkt BAT=4264mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (7996) uart: ← NUC: VOLT pkt BAT=4252mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (8495) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (8559) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (8694) uart: ← NUC: switch pkt B0=0x00 B1=0x00 B2=0x00 B3=0x00 | active: none | PF=0 LB=0[0m
+[0;32mI (8995) uart: ← NUC: VOLT pkt BAT=4248mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (9476) remote: Server: RL1 ON[0m
+[0;32mI (9477) relay: RL1 tracked → ON (NUC drives the real relay)[0m
+[0;32mI (9477) uart: → NUC: relay cmd RL1[0m
+[0;32mI (9495) uart: ← NUC: VOLT pkt BAT=4248mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (9828) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (9994) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (10494) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (10693) uart: ← NUC: switch pkt B0=0x00 B1=0x00 B2=0x00 B3=0x00 | active: none | PF=0 LB=0[0m
+[0;32mI (10702) remote: Server: RL2 ON[0m
+[0;32mI (10702) uart: → NUC: relay cmd RL2[0m
+[0;32mI (10994) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (11023) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (11493) uart: ← NUC: VOLT pkt BAT=4252mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (11934) remote: Server: RL3 ON[0m
+[0;32mI (11935) uart: → NUC: relay cmd RL3[0m
+[0;32mI (11993) uart: ← NUC: VOLT pkt BAT=4248mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (12163) main: ================ STATUS SUMMARY ================[0m
+[0;32mI (12164) main: WiFi     : UP | retry#0[0m
+[0;32mI (12164) main: NUC UART : OK | pkts=115[0m
+[0;32mI (12165) main: Battery  : 4248mV (100%) | Power: OK | Low-batt: no[0m
+[0;32mI (12171) main: Relays   : R1=1 R2=0 R3=0 R4=0[0m
+[0;32mI (12175) main: Lock     : unlocked[0m
+[0;32mI (12179) main: Switches : none[0m
+[0;32mI (12181) main: ==================================================[0m
+[0;32mI (12258) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (12477) relay: RL1 tracked → OFF (NUC drives the real relay)[0m
+[0;32mI (12477) relay: RL2 tracked → ON (NUC drives the real relay)[0m
+[0;32mI (12478) relay: RL3 tracked → ON (NUC drives the real relay)[0m
+[0;32mI (12492) uart: ← NUC: VOLT pkt BAT=4252mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (12691) uart: ← NUC: switch pkt B0=0x00 B1=0x00 B2=0x00 B3=0x00 | active: none | PF=0 LB=0[0m
+[0;32mI (12992) uart: ← NUC: VOLT pkt BAT=4252mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (13158) remote: Server: RL4 ON[0m
+[0;32mI (13159) uart: → NUC: relay cmd RL4[0m
+[0;32mI (13479) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (13492) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (13991) uart: ← NUC: VOLT pkt BAT=4252mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (14386) remote: read_relay_status raw: R1=1 R2=1 R3=1 R4=1[0m
+[0;32mI (14491) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (14690) uart: ← NUC: switch pkt B0=0x00 B1=0x00 B2=0x00 B3=0x00 | active: none | PF=0 LB=0[0m
+[0;32mI (14916) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (14991) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (15483) relay: RL4 tracked → ON (NUC drives the real relay)[0m
+[0;32mI (15490) uart: ← NUC: VOLT pkt BAT=4252mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (15990) uart: ← NUC: VOLT pkt BAT=4252mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (16133) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (16490) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (16688) uart: ← NUC: switch pkt B0=0x00 B1=0x00 B2=0x00 B3=0x00 | active: none | PF=0 LB=0[0m
+[0;32mI (16989) uart: ← NUC: VOLT pkt BAT=4252mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;33mW (17048) remote: Using 'Muccess' typo fallback - server should rename this field to 'success'[0m
+[0;32mI (17364) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (17489) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (17988) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (18483) relay: RL4 tracked → OFF (NUC drives the real relay)[0m
+[0;32mI (18483) relay: RL4 tracked → ON (NUC drives the real relay)[0m
+[0;32mI (18488) uart: ← NUC: VOLT pkt BAT=4268mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (18608) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (18687) uart: ← NUC: switch pkt B0=0x00 B1=0x00 B2=0x00 B3=0x00 | active: none | PF=0 LB=0[0m
+[0;32mI (18988) uart: ← NUC: VOLT pkt BAT=4268mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (19487) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (19507) remote: Server: RL1 ON[0m
+[0;32mI (19508) uart: → NUC: relay cmd RL1[0m
+[0;32mI (19825) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (19987) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (20487) uart: ← NUC: VOLT pkt BAT=4252mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (20685) uart: ← NUC: switch pkt B0=0x00 B1=0x00 B2=0x00 B3=0x00 | active: none | PF=0 LB=0[0m
+[0;32mI (20736) remote: read_relay_status raw: R1=1 R2=1 R3=1 R4=1[0m
+[0;32mI (20986) uart: ← NUC: VOLT pkt BAT=4264mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (21050) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (21484) relay: RL4 tracked → OFF (NUC drives the real relay)[0m
+[0;32mI (21484) relay: RL1 tracked → ON (NUC drives the real relay)[0m
+[0;32mI (21486) uart: ← NUC: VOLT pkt BAT=4252mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (21963) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (21985) uart: ← NUC: VOLT pkt BAT=4252mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (22187) main: ================ STATUS SUMMARY ================[0m
+[0;32mI (22188) main: WiFi     : UP | retry#0[0m
+[0;32mI (22188) main: NUC UART : OK | pkts=216[0m
+[0;32mI (22189) main: Battery  : 4252mV (100%) | Power: OK | Low-batt: no[0m
+[0;32mI (22195) main: Relays   : R1=1 R2=1 R3=1 R4=0[0m
+[0;32mI (22199) main: Lock     : unlocked[0m
+[0;32mI (22203) main: Switches : none[0m
+[0;32mI (22205) main: ==================================================[0m
+[0;32mI (22302) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (22485) uart: ← NUC: VOLT pkt BAT=4252mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (22684) uart: ← NUC: switch pkt B0=0x00 B1=0x00 B2=0x00 B3=0x00 | active: none | PF=0 LB=0[0m
+[0;32mI (22985) uart: ← NUC: VOLT pkt BAT=4248mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (23198) remote: Server LED status (read back): L1=0 L2=0 L3=0 L4=0 L5=0 L6=0 L7=0 L8=0 L9=0 L10=0 L11=0 L12=0 L13=0 L14=0 L15=0 L16=0 L17=0 L18=0 L19=0 L20=0 L21=0 L22=0 L23=0 L24=0 L25=0 [0m
+[0;32mI (23484) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (23536) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (23984) uart: ← NUC: VOLT pkt BAT=4248mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (24360) remote: read_input_status raw: R1=1 R2=1 R3=1 R4=1 Lock=0 SoftReset=1[0m
+[0;32mI (24484) uart: ← NUC: VOLT pkt BAT=4248mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (24485) relay: RL1 tracked → OFF (NUC drives the real relay)[0m
+[0;32mI (24682) uart: ← NUC: switch pkt B0=0x00 B1=0x00 B2=0x00 B3=0x00 | active: none | PF=0 LB=0[0m
+[0;32mI (24683) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (24983) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (25444) remote: power details update: OK (pwr_status=1 batt_volt=4.25 batt_status=1)[0m
+[0;32mI (25483) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (25760) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (25982) uart: ← NUC: VOLT pkt BAT=4248mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (26482) uart: ← NUC: VOLT pkt BAT=4252mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (26674) remote: read_soft_reset_status poll OK (SoftResetStatus=1)[0m
+[0;33mW (26675) remote: Soft reset requested by server - waiting 5s before acknowledging (SOFT_RESET_PRE_ACK_DELAY_MS)...[0m
+[0;32mI (26681) uart: ← NUC: switch pkt B0=0x00 B1=0x00 B2=0x00 B3=0x00 | active: none | PF=0 LB=0[0m
+[0;32mI (26982) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (27481) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (27981) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (28480) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (28679) uart: ← NUC: switch pkt B0=0x00 B1=0x00 B2=0x00 B3=0x00 | active: none | PF=0 LB=0[0m
+[0;32mI (28980) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (29480) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (29979) uart: ← NUC: VOLT pkt BAT=4256mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (30479) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (30678) uart: ← NUC: switch pkt B0=0x00 B1=0x00 B2=0x00 B3=0x00 | active: none | PF=0 LB=0[0m
+[0;32mI (30979) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (31478) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (31978) uart: ← NUC: VOLT pkt BAT=4260mV (100%) PWR_STATUS=1 PF=0 LB=0[0m
+[0;32mI (31994) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (32211) main: ================ STATUS SUMMARY ================[0m
+[0;32mI (32212) main: WiFi     : UP | retry#0[0m
+[0;32mI (32212) main: NUC UART : OK | pkts=316[0m
+[0;32mI (32213) main: Battery  : 4260mV (100%) | Power: OK | Low-batt: no[0m
+[0;32mI (32219) main: Relays   : R1=0 R2=1 R3=1 R4=0[0m
+[0;32mI (32223) main: Lock     : unlocked[0m
+[0;32mI (32227) main: Switches : none[0m
+[0;32mI (32229) main: ==================================================[0m
