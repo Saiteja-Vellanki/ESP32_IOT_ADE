@@ -79,10 +79,10 @@
  * always said) so the NUC link and console logging are fully
  * independent - ESP_LOGI now works safely for the LED-status
  * console print requested below.                                */
-#define UART_PORT_NUM           UART_NUM_2
+#define UART_PORT_NUM           UART_NUM_0
 #define UART_BAUD_RATE          115200
-#define UART_RX_PIN             16
-#define UART_TX_PIN             17
+#define UART_RX_PIN             3
+#define UART_TX_PIN             1
 #define UART_RX_BUF_SIZE        1024
 
 /* ── Protocol (NUC029 → ESP32) ──────────────────────────────── */
