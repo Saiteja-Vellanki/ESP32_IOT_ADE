@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aditya Electronics Gateway</title>
+<style>
+  :root {
+    --bg:#0f1117;--surface:#1a1d27;--surf2:#22263a;--border:#2e3248;
+    --accent:#4f8ef7;--on:#22c55e;--on-bg:#0d1f15;--off:#374151;
+    --text:#e2e8f0;--muted:#64748b;--danger:#ef4444;--danger-bg:#1f0a0a;
+    --amber:#f59e0b;--amber-bg:#1c1508;--warn:#f97316;--warn-bg:#1c0e03;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;min-height:100vh;padding-bottom:40px}
+
+  header{background:var(--surface);border-bottom:1px solid var(--border);padding:16px 24px;
+    display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;
+    position:sticky;top:0;z-index:100}
+  .logo{width:36px;height:36px;background:var(--accent);border-radius:9px;
+    display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+  .hl{display:flex;align-items:center;gap:12px}
+  h1{font-size:17px;font-weight:600}
+  h1 span{font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:1px}
+  .badges{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .badge{display:flex;align-items:center;gap:6px;font-size:12px;
+    background:var(--surf2);border:1px solid var(--border);border-radius:20px;padding:4px 11px}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--muted);flex-shrink:0}
+  .dot.online{background:var(--on);box-shadow:0 0 6px var(--on)}
+  .dot.offline{background:var(--danger)}
+
+  /* ── Alert banners ───────────────────────────────────────── */
+  .alerts{display:flex;flex-direction:column;gap:8px;padding:12px 24px 0}
+  .alert{display:none;align-items:center;gap:10px;border-radius:10px;
+    padding:10px 16px;font-size:13px;font-weight:600}
+  .alert.show{display:flex}
+  .alert-icon{font-size:18px;flex-shrink:0}
+  .alert-pf{background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.4);color:#fca5a5}
+  .alert-lb{background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.4);color:#fdba74}
+  .alert-uart{background:rgba(100,116,139,.15);border:1px solid rgba(100,116,139,.4);color:#cbd5e1}
+
+  .summary{display:flex;gap:14px;padding:18px 24px 0;flex-wrap:wrap}
+  .stat{background:var(--surface);border:1px solid var(--border);border-radius:12px;
+    padding:13px 18px;min-width:110px;text-align:center}
+  .sv{font-size:26px;font-weight:700;line-height:1;margin-bottom:3px}
+  .sl{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+  .green{color:var(--on)} .blue{color:var(--accent)} .gray{color:var(--muted)}
+  .red{color:var(--danger)} .orange{color:var(--warn)}
+
+  .relay-panel{margin:18px 24px 0;background:var(--surface);
+    border:1px solid var(--border);border-radius:14px;padding:18px}
+  .relay-title{font-size:10px;font-weight:700;color:var(--muted);
+    text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px}
+  .relay-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+  .relay-card{background:var(--surf2);border:1px solid var(--border);
+    border-radius:10px;padding:14px 16px;display:flex;
+    align-items:center;justify-content:space-between;gap:12px}
+  .relay-card.active{border-color:var(--amber);background:var(--amber-bg)}
+  .relay-info{display:flex;flex-direction:column;gap:3px}
+  .relay-name{font-size:13px;font-weight:600}
+  .relay-desc{font-size:10px;color:var(--muted);line-height:1.4}
+  .relay-state{font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--muted)}
+  .relay-card.active .relay-state{color:var(--amber)}
+  .relay-led{width:12px;height:12px;border-radius:50%;background:var(--off);
+    border:1px solid var(--border);flex-shrink:0;transition:all .2s}
+  .relay-card.active .relay-led{background:var(--amber);
+    box-shadow:0 0 8px var(--amber);border-color:var(--amber)}
+  .sw-btn{background:var(--accent);color:#fff;border:none;border-radius:7px;
+    padding:7px 16px;font-size:12px;font-weight:600;cursor:pointer;
+    transition:opacity .2s;white-space:nowrap}
+  .sw-btn:hover{opacity:.85}
+  .sw-btn:disabled{opacity:.4;cursor:not-allowed}
+  .sw-btn.busy{background:var(--amber);color:#000}
+
+  .wrap{padding:18px 24px 0}
+  .sec{font-size:10px;font-weight:600;color:var(--muted);
+    text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:10px}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:13px;
+    padding:14px 12px;display:flex;flex-direction:column;align-items:center;gap:9px;
+    transition:border-color .2s,background .2s}
+  .card.high{border-color:var(--on);background:var(--on-bg)}
+  .gnum{font-size:10px;font-weight:600;color:var(--muted);
+    text-transform:uppercase;letter-spacing:.07em;align-self:flex-start}
+  .track{width:50px;height:26px;border-radius:13px;background:var(--off);
+    border:2px solid #1f2937;position:relative;transition:background .2s,border-color .2s,box-shadow .2s;flex-shrink:0}
+  .card.high .track{background:var(--on);border-color:#16a34a;box-shadow:0 0 9px rgba(34,197,94,.35)}
+  .thumb{width:18px;height:18px;border-radius:50%;background:#fff;position:absolute;
+    top:2px;left:2px;transition:transform .22s cubic-bezier(.34,1.56,.64,1);box-shadow:0 1px 3px rgba(0,0,0,.4)}
+  .card.high .thumb{transform:translateX(22px)}
+  .slbl{font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--muted);transition:color .2s}
+  .card.high .slbl{color:var(--on)}
+  .pname{font-size:10px;color:var(--muted);text-align:center;line-height:1.3}
+
+  footer{text-align:center;font-size:11px;color:var(--muted);margin-top:26px}
+  @media(max-width:480px){
+    header,.summary,.wrap,.relay-panel,.alerts{padding-left:14px;padding-right:14px}
+    .grid{grid-template-columns:repeat(auto-fill,minmax(108px,1fr));gap:8px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hl">
+    <div class="logo">&#9889;</div>
+    <h1>Aditya Electronics Gateway <span>ESP32-WROOM-32 &nbsp;&middot;&nbsp; Aditya Electronics Solutions</span></h1>
+  </div>
+  <div class="badges">
+    <div class="badge"><div class="dot" id="cdot"></div><span id="clbl">Connecting&hellip;</span></div>
+    <div class="badge"><span style="color:var(--muted)">ID</span><span id="mac-id" style="font-weight:600;font-family:monospace">&mdash;</span></div>
+    <div class="badge"><span style="color:var(--muted)">Pkts</span><span id="pkts" style="font-weight:600">&mdash;</span></div>
+    <div class="badge"><span style="color:var(--muted)">Age</span><span id="age">&mdash;</span></div>
+    <div class="badge">
+    <span style="color:var(--muted)">Time</span>
+    <span id="clock"
+          style="font-weight:600;font-family:monospace">
+        --
+    </span>
+</div>
+  </div>
+</header>
+
+<!-- ── Alert Banners ───────────────────────────────────────── -->
+<div class="alerts">
+  <div class="alert alert-uart" id="banner-uart">
+    <span class="alert-icon">&#9888;</span>
+    <span>No UART packet received &mdash; check NUC029 connection.</span>
+  </div>
+  <div class="alert alert-pf" id="banner-pf">
+    <span class="alert-icon">&#9889;</span>
+    <span><strong>POWER FAIL</strong> &mdash; Mains power lost. Running on battery backup.</span>
+  </div>
+  <div class="alert alert-lb" id="banner-lb">
+    <span class="alert-icon">&#128267;</span>
+    <span><strong>LOW BATTERY</strong> &mdash; Battery voltage below threshold. Recharge immediately.</span>
+  </div>
+</div>
+
+<div class="summary">
+  <div class="stat"><div class="sv green" id="s-hi">&mdash;</div><div class="sl">SW HIGH</div></div>
+  <div class="stat"><div class="sv gray"  id="s-lo">&mdash;</div><div class="sl">SW LOW</div></div>
+  <div class="stat"><div class="sv blue">25</div><div class="sl">Total Inputs</div></div>
+  <div class="stat"><div class="sv" id="s-rl" style="color:var(--amber)">&mdash;</div><div class="sl">Relays ON</div></div>
+  <div class="stat"><div class="sv" id="s-pf" style="color:var(--danger)">OK</div><div class="sl">Power</div></div>
+  <div class="stat"><div class="sv" id="s-lb" style="color:var(--on)">OK</div><div class="sl">Battery</div></div>
+  <div class="stat"><div class="sv blue" id="s-batpct">&mdash;</div><div class="sl">Battery %</div></div>
+</div>
+
+<!-- ── Relay Control Panel ─────────────────────────────────── -->
+<div class="relay-panel">
+  <div class="relay-title">&#9889; Relay Control</div>
+  <div class="relay-grid">
+    <div class="relay-card" id="rc1">
+      <div class="relay-info">
+        <div class="relay-name">RL1 &nbsp;<span class="relay-led" id="rl1-led"></span></div>
+        <div class="relay-desc">Pulse ON 3 sec then OFF</div>
+        <div class="relay-state" id="rl1-st">OFF</div>
+      </div>
+      <button class="sw-btn" id="btn1" onclick="sendRelay(1)">SW1</button>
+    </div>
+    <div class="relay-card" id="rc2">
+      <div class="relay-info">
+        <div class="relay-name">RL2 &nbsp;<span class="relay-led" id="rl2-led"></span></div>
+        <div class="relay-desc">Continuous ON / press: OFF 3s then ON</div>
+        <div class="relay-state" id="rl2-st">OFF</div>
+      </div>
+      <button class="sw-btn" id="btn2" onclick="sendRelay(2)">SW2</button>
+    </div>
+    <div class="relay-card" id="rc3">
+      <div class="relay-info">
+        <div class="relay-name">RL3 &nbsp;<span class="relay-led" id="rl3-led"></span></div>
+        <div class="relay-desc">ON → after 3s triggers RL4 pulse</div>
+        <div class="relay-state" id="rl3-st">OFF</div>
+      </div>
+      <button class="sw-btn" id="btn3" onclick="sendRelay(3)">SW3</button>
+    </div>
+    <div class="relay-card" id="rc4">
+      <div class="relay-info">
+        <div class="relay-name">RL4 &nbsp;<span class="relay-led" id="rl4-led"></span></div>
+        <div class="relay-desc">Auto-triggered by RL3 → ON 3s then OFF</div>
+        <div class="relay-state" id="rl4-st">OFF</div>
+      </div>
+      <span style="font-size:10px;color:var(--muted)">AUTO</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── Switch Inputs ──────────────────────────────────────── -->
+<div class="wrap">
+  <p class="sec" style="margin-top:18px">Switch Inputs (SW01 &ndash; SW25)</p>
+  <div class="grid" id="grid"></div>
+</div>
+
+<!-- ── WiFi credentials reset ───────────────────────────────── -->
+<div style="text-align:center;padding:18px 24px 0">
+  <button id="wifiResetBtn" onclick="eraseWifi()"
+    style="background:var(--surface);color:var(--muted);border:1px solid var(--border);
+    border-radius:8px;padding:9px 18px;font-size:12px;cursor:pointer">
+    &#128246; Erase WiFi Credentials
+  </button>
+</div>
+
+<footer>Auto-refresh 500 ms &nbsp;&middot;&nbsp; UART @ 115200 baud &nbsp;&middot;&nbsp; Aditya Electronics Solutions</footer>
+
+<script>
+async function eraseWifi(){
+  const confirmed = confirm(
+    'This will erase the saved WiFi credentials and restart the device ' +
+    'into setup mode.\n\nContinue?'
+  );
+  if (!confirmed) return;
+  const btn = document.getElementById('wifiResetBtn');
+  btn.disabled = true;
+  btn.textContent = 'Restarting…';
+  try {
+    await fetch('/wifi/reset', { method: 'POST' });
+    btn.textContent = 'Device restarting — reconnect to "Aditya-IoT-Setup"';
+  } catch (e) {
+    btn.textContent = 'Restarting… (connection will drop)';
+  }
+}
+</script>
+
+<script>
+(function(){
+  const g=document.getElementById('grid');
+  for(let i=0;i<25;i++){
+    const d=document.createElement('div');
+    d.className='card'; d.id='c'+i;
+    d.innerHTML='<span class="gnum">SW '+(i+1).toString().padStart(2,'0')+'</span>'+
+      '<div class="track"><div class="thumb"></div></div>'+
+      '<span class="slbl" id="l'+i+'">LOW</span>'+
+      '<span class="pname">Input '+(i+1)+'</span>';
+    g.appendChild(d);
+  }
+})();
+
+let relayBusy=false;
+
+async function sendRelay(sw){
+  if(relayBusy)return;
+  relayBusy=true;
+  const btn=document.getElementById('btn'+sw);
+  if(btn){btn.disabled=true;btn.classList.add('busy');btn.textContent='...';}
+  try{
+    const r=await fetch('/relay',{method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({sw:sw})});
+    await r.json();
+  }catch(e){console.error('Relay error:',e);}
+  setTimeout(()=>{
+    relayBusy=false;
+    if(btn){btn.disabled=false;btn.classList.remove('busy');btn.textContent='SW'+sw;}
+  },3500);
+}
+
+async function poll(){
+  try{
+    const r=await fetch('/status',{cache:'no-store'});
+    const d=await r.json();
+
+    /* Connection */
+    document.getElementById('cdot').className='dot '+(d.online?'online':'offline');
+    document.getElementById('clbl').textContent=d.online?'Controller Online':'No Signal';
+    document.getElementById('pkts').textContent=d.packets;
+    document.getElementById('age').textContent=d.age_ms+'ms';
+    document.getElementById('banner-uart').classList.toggle('show',!d.online);
+
+    /* MAC */
+    if(d.mac) document.getElementById('mac-id').textContent=d.mac;
+    if(d.datetime)
+    document.getElementById("clock").textContent=d.datetime;
+    /* Power fail banner + stat */
+    const pf=d.power_fail===true;
+    document.getElementById('banner-pf').classList.toggle('show',pf);
+    const pfEl=document.getElementById('s-pf');
+    pfEl.textContent=pf?'FAIL':'OK';
+    pfEl.style.color=pf?'var(--danger)':'var(--on)';
+
+    /* Low battery banner + stat */
+    const lb=d.low_battery===true;
+    document.getElementById('banner-lb').classList.toggle('show',lb);
+    const lbEl=document.getElementById('s-lb');
+    lbEl.textContent=lb?'LOW':'OK';
+    lbEl.style.color=lb?'var(--warn)':'var(--on)';
+
+    /* Battery percentage (-1 = no ADC data yet) */
+    const batPctEl=document.getElementById('s-batpct');
+    if(d.bat_pct!==undefined && d.bat_pct>=0){
+      batPctEl.textContent=d.bat_pct+'%';
+      batPctEl.style.color=d.bat_pct<20?'var(--danger)':d.bat_pct<50?'var(--warn)':'var(--on)';
+    } else {
+      batPctEl.textContent='N/A';
+      batPctEl.style.color='var(--muted)';
+    }
+
+    /* Switch inputs */
+    let hi=0;
+    for(let i=0;i<25;i++){
+      const on=d.gpios[i]===1;
+      document.getElementById('c'+i).classList.toggle('high',on);
+      document.getElementById('l'+i).textContent=on?'HIGH':'LOW';
+      if(on)hi++;
+    }
+    document.getElementById('s-hi').textContent=hi;
+    document.getElementById('s-lo').textContent=25-hi;
+
+    /* Relays */
+    if(d.relays){
+      let rlOn=0;
+      for(let i=0;i<4;i++){
+        const on=d.relays[i]===1;
+        const rc=document.getElementById('rc'+(i+1));
+        const st=document.getElementById('rl'+(i+1)+'-st');
+        const led=document.getElementById('rl'+(i+1)+'-led');
+        if(rc)rc.classList.toggle('active',on);
+        if(st)st.textContent=on?'ON':'OFF';
+        if(led)led.style.background=on?'var(--amber)':'var(--off)';
+        if(on)rlOn++;
+      }
+      document.getElementById('s-rl').textContent=rlOn;
+    }
+
+  }catch(e){
+    document.getElementById('cdot').className='dot offline';
+    document.getElementById('clbl').textContent='Server Unreachable';
+    document.getElementById('banner-uart').classList.add('show');
+  }
+}
+
+poll();
+setInterval(poll,500);
+</script>
+</body>
+</html>

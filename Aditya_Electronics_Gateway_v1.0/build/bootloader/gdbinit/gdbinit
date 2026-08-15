@@ -1,0 +1,2 @@
+source C:/Espressif/frameworks/esp-idf-v5.5.2/examples/Aditya_Electronics_Gateway_v1.0/build/bootloader/gdbinit/symbols
+source C:/Espressif/frameworks/esp-idf-v5.5.2/examples/Aditya_Electronics_Gateway_v1.0/build/bootloader/gdbinit/connect

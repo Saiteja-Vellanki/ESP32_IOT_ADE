@@ -1,0 +1,322 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5.2\tools/idf_monitor.py -p com7 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 C:\Espressif\frameworks\esp-idf-v5.5.2\examples\Aditya_Electronics_Gateway_v1.0\build\Aditya_Electronics_Gateway.elf C:\Espressif\frameworks\esp-idf-v5.5.2\examples\Aditya_Electronics_Gateway_v1.0\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.5.2\tools\idf.py' '-p' 'com7'
+RON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x0�$b�����           Usage          Type ST Offset   Length
+[0;32mI (55) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 p�ets Jun  8 2016 00:22:57[0m
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6384
+load:0x40078000,len:15916
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v5.5.2 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug 15 2026 14:25:45[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (28) boot: chip revision: v1.0[0m
+[0;32mI (31) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (38) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (55) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (68) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (75) boot: End of partition table[0m
+[0;32mI (78) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=41570h (267632) map[0m
+[0;32mI (177) esp_image: segment 1: paddr=00051598 vaddr=3ffb0000 size=03fc4h ( 16324) load[0m
+[0;32mI (183) esp_image: segment 2: paddr=00055564 vaddr=40080000 size=0aab4h ( 43700) load[0m
+[0;32mI (201) esp_image: segment 3: paddr=00060020 vaddr=400d0020 size=af4f8h (718072) map[0m
+[0;32mI (446) esp_image: segment 4: paddr=0010f520 vaddr=4008aab4 size=0e5c0h ( 58816) load[0m
+[0;32mI (469) esp_image: segment 5: paddr=0011dae8 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (482) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (482) boot: Disabling RNG early entropy source...[0m
+[0;32mI (492) cpu_start: Multicore app[0m
+[0;32mI (501) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (501) cpu_start: Pro cpu start user code[0m
+[0;32mI (501) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (503) app_init: Application information:[0m
+[0;32mI (507) app_init: Project name:     Aditya_Electronics_Gateway[0m
+[0;32mI (512) app_init: App version:      v5.5.2[0m
+[0;32mI (516) app_init: Compile time:     Aug 15 2026 14:24:57[0m
+[0;32mI (521) app_init: ELF file SHA256:  2691f2721...[0m
+[0;32mI (525) app_init: ESP-IDF:          v5.5.2[0m
+[0;32mI (529) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (533) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (537) efuse_init: Chip rev:         v1.0[0m
+[0;32mI (541) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (547) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (552) heap_init: At 3FFB8AC8 len 00027538 (157 KiB): DRAM[0m
+[0;32mI (557) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (563) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (568) heap_init: At 40099074 len 00006F8C (27 KiB): IRAM[0m
+[0;32mI (575) spi_flash: detected chip: generic[0m
+[0;32mI (577) spi_flash: flash io: dio[0m
+[0;32mI (581) main_task: Started on CPU0[0m
+[0;32mI (584) main_task: Calling app_main()[0m
+[0;32mI (586) main: === Aditya Electronics Gateway ===[0m
+[0;32mI (590) main: Firmware version: 2.0-Beta[0m
+[0;32mI (594) main: WiFi: AP-portal | Server: remote[0m
+[0;32mI (631) main: nvsI (633) uart: UART0 RX=GPIO3 TX=GPIO1 115200baud[0m
+[0;32mI (634) relay: Relay cache init: NUC owns R1-R4 and all timing[0m
+[0;32mI (635) led: LED GPIO2[0m
+[0;32mI (635) led: Buzzer GPIO4[0m
+[0;32mI (637) factory_reset: Factory reset: hold GPIO16 for 15s to erase WiFi credentials and reset portal IP to 192.168.4.1[0m
+[0;32mI (647) factory_reset: WiFi-only reset: hold GPIO17 for 10s to erase WiFi credentials only (setup-page IP stays as configured)[0m
+[0;32mI (661) wifi_ap: NVS loaded SSID=Saiteja[0m
+[0;32mI (662) main: NVS creds: Saiteja[0m
+[0;32mI (670) wifi:wifi driver task: 3ffc5290, prio:23, stack:6656, core=0[0m
+[0;32mI (689) wifi:wifi firmware version: ee91c8c[0m
+[0;32mI (690) wifi:wifi certification version: v7.0[0m
+[0;32mI (690) wifi:config NVS flash: enabled[0m
+[0;32mI (690) wifi:config nano formatting: disabled[0m
+[0;32mI (694) wifi:Init data frame dynamic rx buffer num: 8[0m
+[0;32mI (699) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (703) wifi:Init management short buffer num: 32[0m
+[0;32mI (708) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (712) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (716) wifi:Init static rx buffer num: 4[0m
+[0;32mI (719) wifi:Init dynamic rx buffer num: 8[0m
+[0;32mI (724) wifi_init: rx ba win: 6[0m
+[0;32mI (726) wifi_init: accept mbox: 6[0m
+[0;32mI (729) wifi_init: tcpip mbox: 32[0m
+[0;32mI (732) wifi_init: udp mbox: 6[0m
+[0;32mI (735) wifi_init: tcp mbox: 6[0m
+[0;32mI (738) wifi_init: tcp tx win: 5760[0m
+[0;32mI (741) wifi_init: tcp rx win: 5760[0m
+[0;32mI (744) wifi_init: tcp mss: 1440[0m
+[0;32mI (747) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (750) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (756) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (839) wifi:mode : sta (ec:62:60:9c:d7:08)[0m
+[0;32mI (840) wifi:enable tsf[0m
+[0;32mI (846) main: Connecting to Saiteja...[0m
+[0;32mI (854) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (855) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (864) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (867) wifi:state: assoc -> init (0x2c0)[0m
+[0;32mI (871) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (873) main: Disconnected (reason=203) retry #1 in 2000ms[0m
+[0;33mW (874) main: Reconnecting in 2000ms...[0m
+[0;33mW (2635) led: Buzzer: 5 beeps — no signal[0m
+[0;33mW (5292) main: Disconnected (reason=205) retry #2 in 4000ms[0m
+[0;33mW (5293) main: Reconnecting in 4000ms...[0m
+[0;32mI (9380) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (9381) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (9387) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (9392) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (12420) wifi:state: run -> init (0xf00)[0m
+[0;32mI (12424) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (12426) main: Disconnected (reason=15) retry #3 in 8000ms[0m
+[0;33mW (12427) main: Reconnecting in 8000ms...[0m
+[0;33mW (22845) main: Disconnected (reason=205) retry #4 in 16000ms[0m
+[0;33mW (22846) main: Reconnecting in 16000ms...[0m
+[0;33mW (32635) led: Buzzer: 5 beeps — no signal[0m
+[0;32mI (38856) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (38857) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (38866) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (38873) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (40847) main: ================ STATUS SUMMARY ================[0m
+[0;32mI (40847) main: WiFi     : DOWN | retry#4[0m
+[0;32mI (40848) main: NUC UART : LOST | pkts=0[0m
+[0;32mI (40849) main: Battery  : 0mV (0%) | Power: OK | Low-batt: no[0m
+[0;32mI (40855) main: Relays   : R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (40859) main: Lock     : unlocked[0m
+[0;32mI (40862) main: Switches : none[0m
+[0;32mI (40865) main: ==================================================[0m
+[0;32mI (41905) wifi:state: run -> init (0xf00)[0m
+[0;32mI (41908) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (41910) main: Disconnected (reason=15) retry #5 in 30000ms[0m
+[0;33mW (41911) main: Reconnecting in 30000ms...[0m
+[0;32mI (50871) main: ================ STATUS SUMMARY ================[0m
+[0;32mI (50871) main: WiFi     : DOWN | retry#5[0m
+[0;32mI (50871) main: NUC UART : LOST | pkts=0[0m
+[0;32mI (50873) main: Battery  : 0mV (0%) | Power: OK | Low-batt: no[0m
+[0;32mI (50878) main: Relays   : R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (50883) main: Lock     : unlocked[0m
+[0;32mI (50886) main: Switches : none[0m
+[0;32mI (50889) main: ==================================================[0m
+[0;32mI (60895) main: ================ STATUS SUMMARY ================[0m
+[0;32mI (60895) main: WiFi     : DOWN | retry#5[0m
+[0;32mI (60895) main: NUC UART : LOST | pkts=0[0m
+[0;32mI (60897) main: Battery  : 0mV (0%) | Power: OK | Low-batt: no[0m
+[0;32mI (60902) main: Relays   : R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (60906) main: Lock     : unlocked[0m
+[0;32mI (60910) main: Switches : none[0m
+[0;32mI (60913) main: ==================================================[0m
+[0;33mW (62635) led: Buzzer: 5 beeps — no signal[0m
+[0;32mI (70918) main: ================ STATUS SUMMARY ================[0m
+[0;32mI (70918) main: WiFi     : DOWN | retry#5[0m
+[0;32mI (70918) main: NUC UART : LOST | pkts=0[0m
+[0;32mI (70920) main: Battery  : 0mV (0%) | Power: OK | Low-batt: no[0m
+[0;32mI (70925) main: Relays   : R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (70929) main: Lock     : unlocked[0m
+[0;32mI (70933) main: Switches : none[0m
+[0;32mI (70936) main: ==================================================[0m
+[0;33mW (74329) main: Disconnected (reason=205) retry #6 in 30000ms[0m
+[0;33mW (74330) main: Reconnecting in 30000ms...[0m
+[0;32mI (80941) main: ================ STATUS SUMMARY ================[0m
+[0;32mI (80941) main: WiFi     : DOWN | retry#6[0m
+[0;32mI (80941) main: NUC UART : LOST | pkts=0[0m
+[0;32mI (80943) main: Battery  : 0mV (0%) | Power: OK | Low-batt: no[0m
+[0;32mI (80948) main: Relays   : R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (80953) main: Lock     : unlocked[0m
+[0;32mI (80956) main: Switches : none[0m
+[0;32mI (80959) main: ==================================================[0m
+[0;32mI (90964) main: ================ STATUS SUMMARY ================[0m
+[0;32mI (90964) main: WiFi     : DOWN | retry#6[0m
+[0;32mI (90964) main: NUC UART : LOST | pkts=0[0m
+[0;32mI (90966) main: Battery  : 0mV (0%) | Power: OK | Low-batt: no[0m
+[0;32mI (90971) main: Relays   : R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (90975) main: Lock     : unlocked[0m
+[0;32mI (90979) main: Switches : none[0m
+[0;32mI (90982) main: ==================================================[0m
+[0;33mW (92635) led: Buzzer: 5 beeps — no signal[0m
+               I (131059) main: ================ STATUS SUMMARY ================
+[0;32mI (131059) main: WiFi     : DOWN | retry#7[0m
+[0;32mI (131059) main: NUC UART : LOST | pkts=0[0m
+[0;32mI (131061) main: Battery  : 0mV (0%) | Power: OK | Low-batt: no[0m
+[0;32mI (131067) main: Relays   : R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (131071) main: Lock     : unlocked[0m
+[0;32mI (131074) main: Switches : none[0m
+[0;32mI (131077) main: ==================================================[0m
+[0;33mW (139809) main: Disconnected (reason=205) retry #8 in 30000ms[0m
+[0;33mW (139810) main: Reconnecting in 30000ms...[0m
+[0;32mI (141083) main: ================ STATUS SUMMARY ================[0m
+[0;32mI (141083) main: WiFi     : DOWN | retry#8[0m
+[0;32mI (141083) main: NUC UART : LOST | pkts=0[0m
+[0;32mI (141085) main: Battery  : 0mV (0%) | Power: OK | Low-batt: no[0m
+[0;32mI (141091) main: Relays   : R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (141095) main: Lock     : unlocked[0m
+[0;32mI (141098) main: Switches : none[0m
+[0;32mI (141101) main: ==================================================[0m
+[0;32mI (151107) main: ================ STATUS SUMMARY ================[0m
+[0;32mI (151107) main: WiFi     : DOWN | retry#8[0m
+[0;32mI (151107) main: NUC UART : LOST | pkts=0[0m
+[0;32mI (151109) main: Battery  : 0mV (0%) | Power: OK | Low-batt: no[0m
+[0;32mI (151115) main: Relays   : R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (151119) main: Lock     : unlocked[0m
+[0;32mI (151122) main: Switches : none[0m
+[0;32mI (151125) main: ==================================================[0m
+[0;33mW (152635) led: Buzzer: 5 beeps — no signal[0m
+  I (201228) main: ================ STATUS SUMMARY ================
+[0;32mI (201228) main: WiFi     : DOWN | retry#9[0m
+[0;32mI (201228) main: NUC UART : LOST | pkts=0[0m
+[0;32mI (201230) main: Battery  : 0mV (0%) | Power: OK | Low-batt: no[0m
+[0;32mI (201236) main: Relays   : R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (201240) main: Lock     : unlocked[0m
+[0;32mI (201243) main: Switches : none[0m
+[0;32mI (201246) main: ==================================================[0m
+[0;33mW (205297) main: Disconnected (reason=205) retry #10 in 30000ms[0m
+[1;31mE (205298) main: Failed to connect after 10 attempts - erasing saved credentials and restarting into the AP portal[0m
+[0;32mI (205606) wifi:flush txq[0m
+[0;32mI (205607) wifi:stop sw txq[0m
+[0;32mI (205607) wifi:lmac stop hw txq[0m
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6384
+load:0x40078000,len:15916
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v5.5.2 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug 15 2026 14:25:45[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v1.0[0m
+[0;32mI (31) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (75) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=41570h (267632) map[0m
+[0;32mI (177) esp_image: segment 1: paddr=00051598 vaddr=3ffb0000 size=03fc4h ( 16324) load[0m
+[0;32mI (184) esp_image: segment 2: paddr=00055564 vaddr=40080000 size=0aab4h ( 43700) load[0m
+[0;32mI (201) esp_image: segment 3: paddr=00060020 vaddr=400d0020 size=af4f8h (718072) map[0m
+[0;32mI (446) esp_image: segment 4: paddr=0010f520 vaddr=4008aab4 size=0e5c0h ( 58816) load[0m
+[0;32mI (470) esp_image: segment 5: paddr=0011dae8 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (482) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (482) boot: Disabling RNG early entropy source...[0m
+[0;32mI (493) cpu_start: Multicore app[0m
+[0;32mI (501) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (501) cpu_start: Pro cpu start user code[0m
+[0;32mI (501) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (503) app_init: Application information:[0m
+[0;32mI (507) app_init: Project name:     Aditya_Electronics_Gateway[0m
+[0;32mI (512) app_init: App version:      v5.5.2[0m
+[0;32mI (516) app_init: Compile time:     Aug 15 2026 14:24:57[0m
+[0;32mI (521) app_init: ELF file SHA256:  2691f2721...[0m
+[0;32mI (526) app_init: ESP-IDF:          v5.5.2[0m
+[0;32mI (529) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (533) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (537) efuse_init: Chip rev:         v1.0[0m
+[0;32mI (541) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (548) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (553) heap_init: At 3FFB8AC8 len 00027538 (157 KiB): DRAM[0m
+[0;32mI (558) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (563) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (569) heap_init: At 40099074 len 00006F8C (27 KiB): IRAM[0m
+[0;32mI (575) spi_flash: detected chip: generic[0m
+[0;32mI (578) spi_flash: flash io: dio[0m
+[0;32mI (582) main_task: Started on CPU0[0m
+[0;32mI (585) main_task: Calling app_main()[0m
+[0;32mI (587) main: === Aditya Electronics Gateway ===[0m
+[0;32mI (591) main: Firmware version: 2.0-Beta[0m
+[0;32mI (595) main: WiFi: AP-portal | Server: remote[0m
+[0;32mI (631) main: nvsI (634) uart: UART0 RX=GPIO3 TX=GPIO1 115200baud[0m
+[0;32mI (634) relay: Relay cache init: NUC owns R1-R4 and all timing[0m
+[0;32mI (634) led: LED GPIO2[0m
+[0;32mI (635) led: Buzzer GPIO4[0m
+[0;32mI (637) factory_reset: Factory reset: hold GPIO16 for 15s to erase WiFi credentials and reset portal IP to 192.168.4.1[0m
+[0;32mI (648) factory_reset: WiFi-only reset: hold GPIO17 for 10s to erase WiFi credentials only (setup-page IP stays as configured)[0m
+[0;33mW (660) wifi_ap: NVS load: SSID key "ssid" not found: ESP_ERR_NVS_NOT_FOUND[0m
+[0;32mI (666) main: No NVS creds — starting AP portal (Aditya-IoT-Setup)[0m
+[0;32mI (671) main: Connect to WiFi "Aditya-IoT-Setup" then open http://192.168.4.3/[0m
+[0;32mI (683) wifi:wifi driver task: 3ffc54cc, prio:23, stack:6656, core=0[0m
+[0;32mI (703) wifi:wifi firmware version: ee91c8c[0m
+[0;32mI (703) wifi:wifi certification version: v7.0[0m
+[0;32mI (703) wifi:config NVS flash: enabled[0m
+[0;32mI (703) wifi:config nano formatting: disabled[0m
+[0;32mI (708) wifi:Init data frame dynamic rx buffer num: 8[0m
+[0;32mI (713) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (716) wifi:Init management short buffer num: 32[0m
+[0;32mI (721) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (725) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (729) wifi:Init static rx buffer num: 4[0m
+[0;32mI (733) wifi:Init dynamic rx buffer num: 8[0m
+[0;32mI (738) wifi_init: rx ba win: 6[0m
+[0;32mI (739) wifi_init: accept mbox: 6[0m
+[0;32mI (742) wifi_init: tcpip mbox: 32[0m
+[0;32mI (745) wifi_init: udp mbox: 6[0m
+[0;32mI (748) wifi_init: tcp mbox: 6[0m
+[0;32mI (751) wifi_init: tcp tx win: 5760[0m
+[0;32mI (754) wifi_init: tcp rx win: 5760[0m
+[0;32mI (757) wifi_init: tcp mss: 1440[0m
+[0;32mI (760) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (764) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (777) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (855) wifi:mode : sta (ec:62:60:9c:d7:08) + softAP (ec:62:60:9c:d7:09)[0m
+[0;32mI (856) wifi:enable tsf[0m
+[0;32mI (861) wifi:Total power save buffer number: 16[0m
+[0;32mI (861) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (862) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (870) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1[0m
+[0;32mI (875) wifi_ap: Applied saved custom portal IP: 192.168.4.3[0m
+[0;32mI (879) wifi_ap: AP started: SSID=Aditya-IoT-Setup  ->  connect and open http://192.168.4.3/[0m
+[0;32mI (891) wifi_ap: Waiting up to 120 s for WiFi credentials...[0m
+[0;33mW (2635) led: Buzzer: 5 beeps — no signal[0m
+[0;33mW (32635) led: Buzzer: 5 beeps — no signal[0m
+[0;33mW (62635) led: Buzzer: 5 beeps — no signal[0m
+[0;33mW (92635) led: Buzzer: 5 beeps — no signal[0m
+   

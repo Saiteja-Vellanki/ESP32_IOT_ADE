@@ -1,0 +1,13 @@
+menu "Aditya IoT Gateway Configuration"
+
+    config FW_VERSION
+        string "Firmware version string"
+        default "2.0-Beta"
+        help
+            Firmware version reported at boot (console log) and
+            available to the rest of the app as CONFIG_FW_VERSION.
+            Change via "idf.py menuconfig" -> "Aditya IoT Gateway
+            Configuration" -> "Firmware version string", or edit the
+            default above and rebuild.
+
+endmenu

@@ -1,0 +1,57 @@
+# ═══════════════════════════════════════════════════════════════
+# sdkconfig.defaults — Aditya Electronics Gateway (ESP32)
+# ESP-IDF v5.5.2
+#
+# Local dashboard: plain HTTP (reverted from HTTPS — TLS handshake
+# was intermittently failing and blocking relay commands; local
+# LAN traffic is low-risk anyway).
+#
+# Cloud API (remote_server.c): still HTTPS — required for talking
+# to adityaelectronicsolutions.com over the real internet.
+# ═══════════════════════════════════════════════════════════════
+
+# ── Bluetooth — REMOVED, not needed currently ───────────────────
+CONFIG_BT_ENABLED=n
+
+# ── WiFi ──────────────────────────────────────────────────────
+CONFIG_ESP_WIFI_STATIC_RX_BUFFER_NUM=4
+CONFIG_ESP_WIFI_DYNAMIC_RX_BUFFER_NUM=8
+
+# ── HTTP server (local dashboard, plain HTTP) ───────────────────
+CONFIG_HTTPD_MAX_REQ_HDR_LEN=1024
+CONFIG_HTTPD_MAX_URI_LEN=512
+
+# ── HTTPS CLIENT only (cloud API — Aditya server) ───────────────
+CONFIG_ESP_HTTP_CLIENT_ENABLE_HTTPS=y
+CONFIG_ESP_TLS_USING_MBEDTLS=y
+CONFIG_MBEDTLS_TLS_CLIENT=y
+
+# ── Certificate bundle — validates Aditya server's real cert ───
+CONFIG_MBEDTLS_CERTIFICATE_BUNDLE=y
+CONFIG_MBEDTLS_CERTIFICATE_BUNDLE_DEFAULT_FULL=y
+
+# ── Elliptic curve support (needed for HTTPS client to Aditya) ──
+CONFIG_MBEDTLS_ECP_C=y
+CONFIG_MBEDTLS_ECDH_C=y
+CONFIG_MBEDTLS_ECDSA_C=y
+CONFIG_MBEDTLS_KEY_EXCHANGE_ECDHE_RSA=y
+CONFIG_MBEDTLS_ECP_DP_SECP256R1_ENABLED=y
+
+# ── FreeRTOS ─────────────────────────────────────────────────────
+CONFIG_FREERTOS_HZ=1000
+
+# ── Log level ────────────────────────────────────────────────────
+CONFIG_LOG_DEFAULT_LEVEL_INFO=y
+
+# ── Partition table ────────────────────────────────────────────────
+CONFIG_PARTITION_TABLE_SINGLE_APP_LARGE=y
+
+# ── Brownout detector — makes power supply issues clearly visible
+#    in Serial Monitor ("Brownout detector was triggered") instead
+#    of a silent unexplained reset.                                ─
+CONFIG_ESP_BROWNOUT_DET=y
+CONFIG_ESP_BROWNOUT_DET_LVL_SEL_7=y
+
+# ── Flash size — chip is 4MB, fix mismatch warning ───────────────
+CONFIG_ESPTOOLPY_FLASHSIZE_4MB=y
+CONFIG_ESPTOOLPY_FLASHSIZE="4MB"

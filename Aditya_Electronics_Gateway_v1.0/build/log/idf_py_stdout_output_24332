@@ -1,0 +1,768 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5.2\tools/idf_monitor.py -p com7 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 C:\Espressif\frameworks\esp-idf-v5.5.2\examples\Aditya_Electronics_Gateway_v1.0\build\Aditya_Electronics_Gateway.elf C:\Espressif\frameworks\esp-idf-v5.5.2\examples\Aditya_Electronics_Gateway_v1.0\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.5.2\tools\idf.py' '-p' 'com7'
+_BOOT)
+conf�ѥѥ���Table:
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (55) boot:  0 nvs              WiFi data        01 02 000090�ets Jun  8 2016 00:22:57[0m
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6384
+load:0x40078000,len:15916
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v5.5.2 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug 15 2026 14:25:45[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (28) boot: chip revision: v1.0[0m
+[0;32mI (31) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (38) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (55) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (68) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (75) boot: End of partition table[0m
+[0;32mI (78) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=41570h (267632) map[0m
+[0;32mI (177) esp_image: segment 1: paddr=00051598 vaddr=3ffb0000 size=03fc4h ( 16324) load[0m
+[0;32mI (183) esp_image: segment 2: paddr=00055564 vaddr=40080000 size=0aab4h ( 43700) load[0m
+[0;32mI (200) esp_image: segment 3: paddr=00060020 vaddr=400d0020 size=af4f8h (718072) map[0m
+[0;32mI (446) esp_image: segment 4: paddr=0010f520 vaddr=4008aab4 size=0e5c0h ( 58816) load[0m
+[0;32mI (469) esp_image: segment 5: paddr=0011dae8 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (481) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (482) boot: Disabling RNG early entropy source...[0m
+[0;32mI (492) cpu_start: Multicore app[0m
+[0;32mI (501) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (501) cpu_start: Pro cpu start user code[0m
+[0;32mI (501) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (503) app_init: Application information:[0m
+[0;32mI (506) app_init: Project name:     Aditya_Electronics_Gateway[0m
+[0;32mI (512) app_init: App version:      v5.5.2[0m
+[0;32mI (516) app_init: Compile time:     Aug 15 2026 14:24:57[0m
+[0;32mI (521) app_init: ELF file SHA256:  2691f2721...[0m
+[0;32mI (525) app_init: ESP-IDF:          v5.5.2[0m
+[0;32mI (529) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (533) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (537) efuse_init: Chip rev:         v1.0[0m
+[0;32mI (541) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (547) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (552) heap_init: At 3FFB8AC8 len 00027538 (157 KiB): DRAM[0m
+[0;32mI (557) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (563) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (568) heap_init: At 40099074 len 00006F8C (27 KiB): IRAM[0m
+[0;32mI (575) spi_flash: detected chip: generic[0m
+[0;32mI (577) spi_flash: flash io: dio[0m
+[0;32mI (581) main_task: Started on CPU0[0m
+[0;32mI (584) main_task: Calling app_main()[0m
+[0;32mI (586) main: === Aditya Electronics Gateway ===[0m
+[0;32mI (590) main: Firmware version: 2.0-Beta[0m
+[0;32mI (594) main: WiFi: AP-portal | Server: remote[0m
+[0;32mI (631) main: nvsI (633) uart: UART0 RX=GPIO3 TX=GPIO1 115200baud[0m
+[0;32mI (633) relay: Relay cache init: NUC owns R1-R4 and all timing[0m
+[0;32mI (634) led: LED GPIO2[0m
+[0;32mI (634) led: Buzzer GPIO4[0m
+[0;32mI (637) factory_reset: Factory reset: hold GPIO16 for 15s to erase WiFi credentials and reset portal IP to 192.168.4.1[0m
+[0;32mI (647) factory_reset: WiFi-only reset: hold GPIO17 for 10s to erase WiFi credentials only (setup-page IP stays as configured)[0m
+[0;33mW (659) wifi_ap: NVS load: SSID key "ssid" not found: ESP_ERR_NVS_NOT_FOUND[0m
+[0;32mI (665) main: No NVS creds — starting AP portal (Aditya-IoT-Setup)[0m
+[0;32mI (671) main: Connect to WiFi "Aditya-IoT-Setup" then open http://192.168.4.3/[0m
+[0;32mI (682) wifi:wifi driver task: 3ffc54cc, prio:23, stack:6656, core=0[0m
+[0;32mI (702) wifi:wifi firmware version: ee91c8c[0m
+[0;32mI (702) wifi:wifi certification version: v7.0[0m
+[0;32mI (703) wifi:config NVS flash: enabled[0m
+[0;32mI (703) wifi:config nano formatting: disabled[0m
+[0;32mI (707) wifi:Init data frame dynamic rx buffer num: 8[0m
+[0;32mI (712) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (716) wifi:Init management short buffer num: 32[0m
+[0;32mI (720) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (724) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (728) wifi:Init static rx buffer num: 4[0m
+[0;32mI (732) wifi:Init dynamic rx buffer num: 8[0m
+[0;32mI (737) wifi_init: rx ba win: 6[0m
+[0;32mI (739) wifi_init: accept mbox: 6[0m
+[0;32mI (742) wifi_init: tcpip mbox: 32[0m
+[0;32mI (745) wifi_init: udp mbox: 6[0m
+[0;32mI (747) wifi_init: tcp mbox: 6[0m
+[0;32mI (750) wifi_init: tcp tx win: 5760[0m
+[0;32mI (753) wifi_init: tcp rx win: 5760[0m
+[0;32mI (757) wifi_init: tcp mss: 1440[0m
+[0;32mI (760) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (763) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (774) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (852) wifi:mode : sta (ec:62:60:9c:d7:08) + softAP (ec:62:60:9c:d7:09)[0m
+[0;32mI (853) wifi:enable tsf[0m
+[0;32mI (858) wifi:Total power save buffer number: 16[0m
+[0;32mI (859) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (859) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (867) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1[0m
+[0;32mI (872) wifi_ap: Applied saved custom portal IP: 192.168.4.3[0m
+[0;32mI (876) wifi_ap: AP started: SSID=Aditya-IoT-Setup  ->  connect and open http://192.168.4.3/[0m
+[0;32mI (888) wifi_ap: Waiting up to 120 s for WiFi credentials...[0m
+[0;33mW (2634) led: Buzzer: 5 beeps — no signal[0m
+[0;32mI (17388) wifi:new:<1,1>, old:<1,1>, ap:<1,1>, sta:<0,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (17389) wifi:station: 4a:e9:f7:ae:dc:ae join, AID=1, bgn, 40U[0m
+[0;32mI (17712) esp_netif_lwip: DHCP server assigned IP to a client, IP is: 192.168.4.4[0m
+[0;32mI (18350) wifi:<ba-add>idx:2 (ifx:1, 4a:e9:f7:ae:dc:ae), tid:6, ssn:17, winSize:64[0m
+[0;32mI (18387) wifi:<ba-add>idx:3 (ifx:1, 4a:e9:f7:ae:dc:ae), tid:0, ssn:19, winSize:64[0m
+[0;33mW (32634) led: Buzzer: 5 beeps — no signal[0m
+[0;33mW (33220) httpd_uri: httpd_uri: URI '/favicon.ico' not found[0m
+[0;33mW (33221) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;32mI (45243) wifi_ap: Received SSID: Saiteja[0m
+[0;32mI (45247) wifi_ap: Credentials saved to NVS[0m
+[0;32mI (45853) wifi:station: 4a:e9:f7:ae:dc:ae leave, AID = 1, reason = 2, bss_flags is 756851, bss:0x3ffce330[0m
+[0;32mI (45854) wifi:new:<1,0>, old:<1,1>, ap:<1,1>, sta:<0,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (45861) wifi:<ba-del>idx:3, tid:0[0m
+[0;32mI (45863) wifi:<ba-del>idx:2, tid:6[0m
+[0;32mI (45866) wifi:new:<1,1>, old:<1,0>, ap:<1,1>, sta:<0,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (45946) wifi:flush txq[0m
+[0;32mI (45946) wifi:stop sw txq[0m
+[0;32mI (45947) wifi:lmac stop hw txq[0m
+[0;32mI (45950) wifi:Deinit lldesc rx mblock:4[0m
+[0;32mI (45953) wifi_ap: AP provisioning stopped[0m
+[0;32mI (46455) wifi:wifi driver task: 3ffc54cc, prio:23, stack:6656, core=0[0m
+[0;32mI (46473) wifi:wifi firmware version: ee91c8c[0m
+[0;32mI (46473) wifi:wifi certification version: v7.0[0m
+[0;32mI (46474) wifi:config NVS flash: enabled[0m
+[0;32mI (46474) wifi:config nano formatting: disabled[0m
+[0;32mI (46479) wifi:Init data frame dynamic rx buffer num: 8[0m
+[0;32mI (46484) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (46488) wifi:Init management short buffer num: 32[0m
+[0;32mI (46492) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (46497) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (46501) wifi:Init static rx buffer num: 4[0m
+[0;32mI (46505) wifi:Init dynamic rx buffer num: 8[0m
+[0;32mI (46510) wifi_init: rx ba win: 6[0m
+[0;32mI (46512) wifi_init: accept mbox: 6[0m
+[0;32mI (46515) wifi_init: tcpip mbox: 32[0m
+[0;32mI (46518) wifi_init: udp mbox: 6[0m
+[0;32mI (46521) wifi_init: tcp mbox: 6[0m
+[0;32mI (46524) wifi_init: tcp tx win: 5760[0m
+[0;32mI (46527) wifi_init: tcp rx win: 5760[0m
+[0;32mI (46531) wifi_init: tcp mss: 1440[0m
+[0;32mI (46534) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (46538) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (46547) wifi:mode : sta (ec:62:60:9c:d7:08)[0m
+[0;32mI (46548) wifi:enable tsf[0m
+[0;32mI (46554) main: Connecting to Saiteja...[0m
+[0;32mI (46580) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (46581) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (46594) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (46603) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (46638) wifi:connected with Saiteja, aid = 2, channel 1, BW20, bssid = 82:ca:e7:a4:6b:e7[0m
+[0;32mI (46639) wifi:security: WPA2-PSK, phy: bgn, rssi: -53[0m
+[0;32mI (46644) wifi:pm start, type: 1[0m
+
+[0;32mI (46644) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (46678) wifi:<ba-add>idx:0 (ifx:0, 82:ca:e7:a4:6b:e7), tid:0, ssn:0, winSize:64[0m
+[0;32mI (46717) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (46718) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (47684) esp_netif_handlers: sta ip: 192.168.29.146, mask: 255.255.255.0, gw: 192.168.29.1[0m
+[0;32mI (47685) main: Connected! IP: 192.168.29.146[0m
+[0;32mI (47686) NTP: Initializing SNTP[0m
+[0;32mI (50690) NTP: NTP synchronized[0m
+[0;32mI (50691) main: Remote (HTTPS): www.adityaelectronicsolutions.com/iot-pump/res-pump[0m
+[0;32mI (50691) remote: DeviceID (MAC): EC62609CD708  server: https://www.adityaelectronicsolutions.com/iot-pump/res-pump[0m
+[0;32mI (50692) remote: relay_poll_task started, mac=EC62609CD708[0m
+[0;32mI (50692) remote: relay_report_task started, mac=EC62609CD708[0m
+[0;32mI (50692) remote: lock_poll_task started, mac=EC62609CD708[0m
+[0;32mI (50901) remote: REGISTER status=1[0m
+[0;32mI (51223) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (53079) remote: REGISTER: OK[0m
+[0;32mI (53080) remote: Registered OK[0m
+[0;32mI (53110) remote: Relay state changed -> R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (53291) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (53489) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (53570) remote: relay_report_task write result: OK[0m
+[0;32mI (53906) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (54308) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (54626) remote: read_soft_reset_status poll OK (SoftResetStatus=0)[0m
+[0;32mI (54832) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (54933) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (55236) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (55415) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (55576) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (55759) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (56053) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (56134) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (56224) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (56306) remote: read_soft_reset_status poll OK (SoftResetStatus=0)[0m
+[0;32mI (56383) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (56561) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (56867) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (57275) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (57480) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (57561) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (57639) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (57640) remote: Relay poll OK (tracked): R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (58097) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (58300) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (58708) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (59124) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (59203) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (59300) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (59527) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (59639) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (59788) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (59938) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (60137) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (60325) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (60402) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (60483) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (60692) main: ================ STATUS SUMMARY ================[0m
+[0;32mI (60692) main: WiFi     : UP | retry#0[0m
+[0;32mI (60693) main: NUC UART : LOST | pkts=0[0m
+[0;32mI (60694) main: Battery  : 0mV (0%) | Power: OK | Low-batt: no[0m
+[0;32mI (60700) main: Relays   : R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (60704) main: Lock     : unlocked[0m
+[0;32mI (60707) main: Switches : none[0m
+[0;32mI (60710) main: ==================================================[0m
+[0;32mI (60759) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (61169) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (61375) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (61530) remote: read_soft_reset_status poll OK (SoftResetStatus=0)[0m
+[0;32mI (61782) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (61782) remote: Relay poll OK (tracked): R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (61862) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (61992) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (62191) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (62601) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (63010) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (63215) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (63420) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (63625) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (63829) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (64034) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (64238) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (64451) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (64650) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (64791) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (65061) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (65265) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (65470) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (65674) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (65879) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (65880) remote: Relay poll OK (tracked): R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (66286) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (66506) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (66695) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (66847) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (67107) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (67192) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (67278) remote: read_soft_reset_status poll OK (SoftResetStatus=0)[0m
+[0;32mI (67377) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (67729) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (68141) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (68337) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (68543) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (68751) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (68956) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (69343) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (70181) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (70385) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (70588) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (70716) main: ================ STATUS SUMMARY ================[0m
+[0;32mI (70716) main: WiFi     : UP | retry#0[0m
+[0;32mI (70716) main: NUC UART : LOST | pkts=0[0m
+[0;32mI (70718) main: Battery  : 0mV (0%) | Power: OK | Low-batt: no[0m
+[0;32mI (70723) main: Relays   : R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (70728) main: Lock     : unlocked[0m
+[0;32mI (70731) main: Switches : none[0m
+[0;32mI (70734) main: ==================================================[0m
+[0;32mI (70791) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (70998) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (71203) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (71388) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (71388) remote: Relay poll OK (tracked): R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (71575) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (71817) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (72025) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (72236) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (72431) remote: read_soft_reset_status poll OK (SoftResetStatus=0)[0m
+[0;32mI (72842) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (72920) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (73252) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (73661) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (73741) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (73820) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (73924) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (74280) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (74688) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (74889) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (75112) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (75915) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (76118) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (76334) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (76414) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (76603) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (76604) remote: Relay poll OK (tracked): R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (76699) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (76782) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (77147) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (77349) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (77558) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (77960) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (78376) remote: read_soft_reset_status poll OK (SoftResetStatus=0)[0m
+[0;32mI (78578) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (78990) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (79401) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (79598) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (79807) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (80010) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (80212) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (80419) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (80624) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (80740) main: ================ STATUS SUMMARY ================[0m
+[0;32mI (80740) main: WiFi     : UP | retry#0[0m
+[0;32mI (80741) main: NUC UART : LOST | pkts=0[0m
+[0;32mI (80742) main: Battery  : 0mV (0%) | Power: OK | Low-batt: no[0m
+[0;32mI (80748) main: Relays   : R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (80752) main: Lock     : unlocked[0m
+[0;32mI (80755) main: Switches : none[0m
+[0;32mI (80758) main: ==================================================[0m
+[0;32mI (80829) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (81034) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (81238) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (81442) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (81584) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (81585) remote: Relay poll OK (tracked): R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (82058) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (82262) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (82344) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (82470) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (82877) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (83289) remote: read_soft_reset_status poll OK (SoftResetStatus=0)[0m
+[0;32mI (83496) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (83695) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (84311) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (84618) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (84706) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (84886) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (85234) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (85440) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (85569) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (85746) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (85824) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (85926) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (86255) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (86405) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (86406) remote: Relay poll OK (tracked): R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (86590) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (86871) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (87074) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (87283) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (87359) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (87691) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (87898) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (88191) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (88925) remote: read_soft_reset_status poll OK (SoftResetStatus=0)[0m
+[0;32mI (89328) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (89406) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (89490) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (89743) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (89915) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (90358) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (90556) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (90639) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (90726) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (90764) main: ================ STATUS SUMMARY ================[0m
+[0;32mI (90764) main: WiFi     : UP | retry#0[0m
+[0;32mI (90765) main: NUC UART : LOST | pkts=0[0m
+[0;32mI (90766) main: Battery  : 0mV (0%) | Power: OK | Low-batt: no[0m
+[0;32mI (90772) main: Relays   : R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (90776) main: Lock     : unlocked[0m
+[0;32mI (90779) main: Switches : none[0m
+[0;32mI (90782) main: ==================================================[0m
+[0;32mI (90967) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (91380) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (91382) remote: Relay poll OK (tracked): R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (91467) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (91560) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (91714) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (91900) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (92196) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (92274) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (92442) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (92607) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (93014) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (93218) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (93425) remote: read_soft_reset_status poll OK (SoftResetStatus=0)[0m
+[0;32mI (93834) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (94045) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (94447) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (94625) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (94702) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (94859) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (95063) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (95474) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (95690) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (95889) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (96091) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (96092) remote: Relay poll OK (tracked): R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (96287) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (96435) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (96621) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (96916) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (97116) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (97203) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (97308) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (97569) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (97917) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (98345) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (98544) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (98951) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (99366) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (99576) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (99670) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (99754) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (99976) remote: read_soft_reset_status poll OK (SoftResetStatus=0)[0m
+[0;32mI (100183) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (100185) remote: Relay poll OK (tracked): R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (100388) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (100596) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (100788) main: ================ STATUS SUMMARY ================[0m
+[0;32mI (100789) main: WiFi     : UP | retry#0[0m
+[0;32mI (100789) main: NUC UART : LOST | pkts=0[0m
+[0;32mI (100793) main: Battery  : 0mV (0%) | Power: OK | Low-batt: no[0m
+[0;32mI (100797) main: Relays   : R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (100797) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (100807) main: Lock     : unlocked[0m
+[0;32mI (100810) main: Switches : none[0m
+[0;32mI (100813) main: ==================================================[0m
+[0;32mI (101206) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (101288) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (101438) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (101623) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (101803) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (102230) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (102370) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (102650) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (102727) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (102829) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (103256) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (103459) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (103872) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (104281) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (104590) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (104677) remote: read_soft_reset_status poll OK (SoftResetStatus=0)[0m
+[0;32mI (104759) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (104996) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (104996) remote: Relay poll OK (tracked): R1=0 R2=1 R3=0 R4=0[0m
+   I (126398) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)
+[0;32mI (126610) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (126807) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (127217) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (127426) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (127626) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (127761) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (128038) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (128247) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (128443) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (129060) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (129061) remote: Relay poll OK (tracked): R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (129470) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (129540) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (129687) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (129756) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (130087) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (130288) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (130502) remote: read_soft_reset_status poll OK (SoftResetStatus=0)[0m
+[0;32mI (130580) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (130765) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (130877) main: ================ STATUS SUMMARY ================[0m
+[0;32mI (130877) main: WiFi     : UP | retry#0[0m
+[0;32mI (130878) main: NUC UART : LOST | pkts=0[0m
+[0;32mI (130879) main: Battery  : 0mV (0%) | Power: OK | Low-batt: no[0m
+[0;32mI (130885) main: Relays   : R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (130889) main: Lock     : unlocked[0m
+[0;32mI (130894) main: Switches : none[0m
+[0;32mI (130896) main: ==================================================[0m
+[0;32mI (130914) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (131111) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (131312) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (131446) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (131723) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (132144) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (132346) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (132425) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (132533) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (132534) remote: Relay poll OK (tracked): R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (132747) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (133161) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (133361) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (133441) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (133771) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (133974) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (134283) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (134401) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (134708) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (134897) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (135102) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (135513) remote: read_soft_reset_status poll OK (SoftResetStatus=0)[0m
+[0;32mI (135719) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (135801) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (135898) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (136129) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (136228) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (136383) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (136556) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (136947) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (136948) remote: Relay poll OK (tracked): R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (137153) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (137238) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (137309) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (137562) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (137969) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (138379) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (138469) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (138788) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (138992) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (139202) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (139327) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (139412) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (139502) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (139823) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (140234) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (140533) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (140902) main: ================ STATUS SUMMARY ================[0m
+[0;32mI (140903) main: WiFi     : UP | retry#0[0m
+[0;32mI (140903) main: NUC UART : LOST | pkts=0[0m
+[0;32mI (140904) main: Battery  : 0mV (0%) | Power: OK | Low-batt: no[0m
+[0;32mI (140910) main: Relays   : R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (140914) main: Lock     : unlocked[0m
+[0;32mI (140918) main: Switches : none[0m
+[0;32mI (140921) main: ==================================================[0m
+[0;32mI (141246) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (141452) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (141538) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (141658) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (141744) remote: read_soft_reset_status poll OK (SoftResetStatus=0)[0m
+[0;32mI (141838) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (141838) remote: Relay poll OK (tracked): R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (142067) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (142279) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (142359) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (142438) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (142728) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (143295) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (143499) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (143907) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (144321) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (144395) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (144477) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (144651) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (144821) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (145039) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (145244) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (145373) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (145449) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (145532) remote: read_soft_reset_status poll OK (SoftResetStatus=0)[0m
+[0;32mI (145610) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (145854) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (145855) remote: Relay poll OK (tracked): R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (146062) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (146264) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (146395) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (146474) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (146574) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (146751) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (146882) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (147083) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (147292) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (147493) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (147704) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (148108) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (148313) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (148446) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (148724) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (148927) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (149138) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (149260) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (149261) remote: Relay poll OK (tracked): R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (149443) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (149604) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (149746) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (149950) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (150155) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (150325) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (150487) remote: read_soft_reset_status poll OK (SoftResetStatus=0)[0m
+[0;32mI (150638) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (150927) main: ================ STATUS SUMMARY ================[0m
+[0;32mI (150927) main: WiFi     : UP | retry#0[0m
+[0;32mI (150928) main: NUC UART : LOST | pkts=0[0m
+[0;32mI (150929) main: Battery  : 0mV (0%) | Power: OK | Low-batt: no[0m
+[0;32mI (150935) main: Relays   : R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (150939) main: Lock     : unlocked[0m
+[0;32mI (150943) main: Switches : none[0m
+[0;32mI (150946) main: ==================================================[0m
+[0;32mI (152010) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (152206) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (152295) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (152613) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (153031) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (153432) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (153640) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (153843) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (153918) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (154254) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (154429) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (154528) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (154594) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (154874) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (154875) remote: Relay poll OK (tracked): R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (155072) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (155196) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (155483) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (155683) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (155891) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (156095) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (156300) remote: read_soft_reset_status poll OK (SoftResetStatus=0)[0m
+[0;32mI (156505) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (156589) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (156698) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (157003) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (157937) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (158555) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (158766) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (158833) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (159168) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (159376) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (159456) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (159524) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (159783) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (159988) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (160191) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (160192) remote: Relay poll OK (tracked): R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (160395) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (160516) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (160604) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (160809) remote: read_soft_reset_status poll OK (SoftResetStatus=0)[0m
+[0;32mI (160952) main: ================ STATUS SUMMARY ================[0m
+[0;32mI (160952) main: WiFi     : UP | retry#0[0m
+[0;32mI (160953) main: NUC UART : LOST | pkts=0[0m
+[0;32mI (160954) main: Battery  : 0mV (0%) | Power: OK | Low-batt: no[0m
+[0;32mI (160960) main: Relays   : R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (160964) main: Lock     : unlocked[0m
+[0;32mI (160968) main: Switches : none[0m
+[0;32mI (160971) main: ==================================================[0m
+[0;32mI (161010) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (161421) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (161514) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (161627) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (161700) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (161885) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (162237) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (162445) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (162857) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (163058) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (163269) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (163673) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (164086) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (164289) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (164524) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (164704) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (164909) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (164909) remote: Relay poll OK (tracked): R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (165723) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (165925) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (166135) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (166339) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (166422) remote: read_soft_reset_status poll OK (SoftResetStatus=0)[0m
+[0;32mI (166562) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (166752) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (166947) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (167156) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (167364) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (167491) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (167974) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (168587) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (168793) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (169003) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (169212) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (169414) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (169537) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (170125) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (170977) main: ================ STATUS SUMMARY ================[0m
+[0;32mI (170978) main: WiFi     : UP | retry#0[0m
+[0;32mI (170978) main: NUC UART : LOST | pkts=0[0m
+[0;32mI (170980) main: Battery  : 0mV (0%) | Power: OK | Low-batt: no[0m
+[0;32mI (170985) main: Relays   : R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (170990) main: Lock     : unlocked[0m
+[0;32mI (170993) main: Switches : none[0m
+[0;32mI (170996) main: ==================================================[0m
+[0;32mI (171048) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (171259) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (171666) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (171798) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (171799) remote: Relay poll OK (tracked): R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (172070) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (172274) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (172357) remote: read_soft_reset_status poll OK (SoftResetStatus=0)[0m
+[0;32mI (172504) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (172682) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (172888) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (173298) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (173472) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (173912) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (174122) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (174326) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (174394) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (174643) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+  e  ���������
+[0;32mI (264654) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (265465) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (265666) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (265876) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (266084) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (266156) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (266230) remote: read_soft_reset_status poll OK (SoftResetStatus=0)[0m
+[0;32mI (266335) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (266460) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (266536) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (266739) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (266913) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (267106) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (267307) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (267307) remote: Relay poll OK (tracked): R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (267487) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (267925) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (268131) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (268224) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (268543) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (268957) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (269359) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (269583) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (269728) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (269973) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (270384) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (270587) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (270796) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (270874) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (271193) remote: read_soft_reset_status poll OK (SoftResetStatus=0)[0m
+[0;32mI (271249) main: ================ STATUS SUMMARY ================[0m
+[0;32mI (271249) main: WiFi     : UP | retry#0[0m
+[0;32mI (271250) main: NUC UART : LOST | pkts=0[0m
+[0;32mI (271251) main: Battery  : 0mV (0%) | Power: OK | Low-batt: no[0m
+[0;32mI (271257) main: Relays   : R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (271261) main: Lock     : unlocked[0m
+[0;32mI (271265) main: Switches : none[0m
+[0;32mI (271268) main: ==================================================[0m
+[0;32mI (271361) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (271444) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (271522) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (271696) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (271885) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (271886) remote: Relay poll OK (tracked): R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (272243) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (272377) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (272639) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (272716) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (273244) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (273448) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (274272) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (274474) remote: power details update: OK (pwr_status=1 batt_volt=0.00 batt_status=3)[0m
+[0;32mI (274563) remote: read_lock_status poll OK (LockStatus=0, currently unlocked)[0m
+[0;32mI (274649) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
+[0;32mI (274842) remote: read_relay_status raw: R1=0 R2=1 R3=0 R4=0[0m
